@@ -12,7 +12,6 @@ smart-punctuation = true
 mathjax-support = true
 git-repository-url = "https://github.com/xjtu-ics"
 git-repository-icon = "fa-github"
-# default-theme = "rust"
 
 [output.html.playground]
 editable = true
