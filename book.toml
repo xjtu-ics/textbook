@@ -10,9 +10,6 @@ title = "Introduction to Computer System"
 [output.html]
 smart-punctuation = true
 mathjax-support = true
-site-url = "/mdBook-pages-test/"
-default-theme = "black"
-preferred-dark-theme = "black"
 git-repository-url = "https://github.com/xjtu-ics"
 git-repository-icon = "fa-github"
 
