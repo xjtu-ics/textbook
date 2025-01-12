@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MDBOOK_VERSION: 0.4.36
-      MDBOOK_ADMONISH_VERSION: "3.0.2" # Specify the version of mdbook-admonish
+      MDBOOK_ADMONISH_VERSION: "1.18.0" # Specify the version of mdbook-admonish
     steps:
       - uses: actions/checkout@v4
       
