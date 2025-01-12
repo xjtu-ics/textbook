@@ -7,7 +7,7 @@ Special thanks to the following contributors. Big shout-out to them 🚀:
 - [Danfeng Shan](https://dfshan.github.io/)
 - [Yunguang Li](https://github.com/Hijack8)
 - [Boxuan Hu](https://bxhu2004.com/)
-- [Orion Liu](https://orion-zhen.github.io/)
+- [Orion](https://orion-zhen.github.io/)
 - [Tang Tang](https://github.com/Tangtang1031)
 - [Jinnuo Du]()
 
