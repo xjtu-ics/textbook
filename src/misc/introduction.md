@@ -2,15 +2,17 @@
 
 > By [Boxuan Hu](https://bxhu2004.com/), based on lectures by [Danfeng Shan](https://dfshan.github.io/), [Hao Li](https://aquatoney.github.io/), and others.
 
-These are the course notes for COMPSCI 400727: Introduction to Computer System at Xi'an Jiaotong University.
+These are the course notes for [COMPSCI 400727: Introduction to Computer System](https://ics.dfshan.net) at Xi'an Jiaotong University.
 
 Here is the official course description:
 
+```admonish info
 This course is inspired by the [CMU-15-213 curriculum](https://www.cs.cmu.edu/~213/) and delves into the intricacies of computer hardware, guiding students through the step-by-step process of how C code is translated into X86_64 assembly and executed on the CPU. The course is structured with increasing levels of complexity:
 
 It begins with __data representation__, introducing the fundamental concepts of __assembly language__, followed by an exploration of memory structure and the significance of __cache design__. The course then covers __CPU pipelining__ and strategies for program optimization to enhance performance. Additionally, we will examine how a C program transitions into machine-readable machine code, including the process of __linking__. Finally, the concept of __virtual memory__ will be introduced.
 
 As an introductory course to systems, it offers both depth and breadth, serving as a prerequisite for future research in computer architecture and network systems.
+```
 
 ## Disclaimer: Beta
 
