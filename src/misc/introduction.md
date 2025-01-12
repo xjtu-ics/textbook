@@ -18,7 +18,7 @@ As an introductory course to systems, it offers both depth and breadth, serving 
 
 These notes have not been proofread. They likely contain errors.
 
-If you’re a ICS student at XJTU, in any case of dispute, the official course lectures are the correct source of truth.
+If you’re an ICS student at XJTU, in any case of dispute, the official course lectures are the correct source of truth.
 
 ## Corrections
 
@@ -28,7 +28,7 @@ If you see any parts that needs to be corrected, please open a Github issue [her
 
 ## Source and Changelog
 
-The source for the textbook and a log of all changes is [available on Github](https://github.com/xjtu-ics/textbook).
+The source for the textbook and a log of all changes are [available on Github](https://github.com/xjtu-ics/textbook).
 
 ## License
 
