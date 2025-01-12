@@ -1,6 +1,6 @@
 # Summary
 
-[Introduction](./misc/introduction.md)
+[XJTU-ICS Textbook](./misc/introduction.md)
 
 ------
 
