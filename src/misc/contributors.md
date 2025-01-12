@@ -5,7 +5,7 @@ Here is a list of the contributors who have helped improving XJTU-ICS. Big shout
 - [Danfeng Shan](https://dfshan.github.io/)
 - [Yunguang Li](https://github.com/Hijack8)
 - [Boxuan Hu](https://bxhu2004.com/)
-- [Chengzhen Liu](https://orion-zhen.github.io/)
+- [Orion](https://orion-zhen.github.io/)
 - [Tang Tang](https://github.com/Tangtang1031)
 - [Jinnuo Du]()
 
