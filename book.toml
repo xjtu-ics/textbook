@@ -1,18 +1,36 @@
 [book]
-authors = ["lzzsG"]
+authors = ["Danfeng Shan", "Boxuan Hu"]
+description = "Textbook for Introduction to Computer System in Xi'an Jiaotong University"
 language = "en"
 multilingual = false
 src = "src"
-title = "mdBook-pages-test"
+title = "Introduction to Computer System"
 
 
 [output.html]
+smart-punctuation = true
+mathjax-support = true
 site-url = "/mdBook-pages-test/"
 default-theme = "black"
 preferred-dark-theme = "black"
-git-repository-url = "https://github.com/lzzsG/mdBook-pages-test"
+git-repository-url = "https://github.com/xjtu-ics"
 git-repository-icon = "fa-github"
-
 
 [output.html.playground]
 editable = true
+line-numbers = true
+
+[output.html.code.hidelines]
+python = "~"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[output.html.redirect]
+"/format/config.html" = "configuration/index.html"
