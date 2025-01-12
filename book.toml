@@ -1,0 +1,18 @@
+[book]
+authors = ["lzzsG"]
+language = "en"
+multilingual = false
+src = "src"
+title = "mdBook-pages-test"
+
+
+[output.html]
+site-url = "/mdBook-pages-test/"
+default-theme = "black"
+preferred-dark-theme = "black"
+git-repository-url = "https://github.com/lzzsG/mdBook-pages-test"
+git-repository-icon = "fa-github"
+
+
+[output.html.playground]
+editable = true
