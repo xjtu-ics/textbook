@@ -4,14 +4,15 @@
 
 We would like to express our heartfelt thanks to all the contributors who have helped improve XJTU-ICS! Your efforts and collaboration make this project better every day 🌟.
 
-Special thanks to the following contributors. Big shout-out to them 🚀:
+Special thanks to __XJTU-ICS Team Members__. Big shout-out to them 🚀:
 
-- [Danfeng Shan](https://dfshan.github.io/)
-- [Yunguang Li](https://github.com/Hijack8)
-- [Boxuan Hu](https://bxhu2004.com/)
-- [Orion](https://orion-zhen.github.io/)
-- [Tang Tang](https://github.com/Tangtang1031)
-- [Jinnuo Du]()
+- [Danfeng Shan](https://dfshan.github.io/) (Professor)
+- [Hao Li](https://aquatoney.github.io/) (Professor)
+- [Yunguang Li](https://github.com/Hijack8) (HEAD TA, Master Student)
+- [Orion](https://orion-zhen.github.io/) (TA, Senior Student)
+- [Tang Tang](https://github.com/Tangtang1031) (TA, Senior Student)
+- [Jinnuo Du]() (TA, Senior Student)
+- [Boxuan Hu](https://bxhu2004.com/) (TA, Junior Student)
 
 You can view the full list of contributors and their contributions [here](https://github.com/xjtu-ics/textbook/graphs/contributors).
 
@@ -31,3 +32,6 @@ We welcome contributions from everyone! If you're interested in contributing to 
 
 If you are curious about how to set up a textbook with mdBook, we have also provided a [detailed tutorial](https://blog.bxhu2004.com/BLOG/Markdown/mdbook-site/) for you to start.
 
+------
+
+© 2025. ICS Team. All rights reserved.

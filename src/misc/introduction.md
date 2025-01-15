@@ -1,6 +1,6 @@
 # Introduction to Computer System
 
-> By [Boxuan Hu](https://bxhu2004.com/), based on lectures by [Danfeng Shan](https://dfshan.github.io/), [Hao Li](https://aquatoney.github.io/), and others.
+> By [ICS Team](./contributors.md), based on lectures by [Danfeng Shan](https://dfshan.github.io/), [Hao Li](https://aquatoney.github.io/), and others.
 
 These are the course notes for [COMPSCI 400727: Introduction to Computer System](https://ics.dfshan.net) at Xi'an Jiaotong University.
 
@@ -45,3 +45,7 @@ The design of this textbook is inspired by many outstanding courses. We would li
 - [CSAPP @CMU](https://www.cs.cmu.edu/~213/)
 - [Operating System @PKU](https://pku-os.github.io/)
 - [ICS @NJU](https://nju-projectn.github.io/ics-pa-gitbook/ics2024/)
+
+------
+
+© 2025. ICS Team. All rights reserved.
