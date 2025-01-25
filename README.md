@@ -16,6 +16,11 @@
 - How to contribute
     - [A Tutorial on mdBook](https://blog.bxhu2004.com/BLOG/Markdown/mdbook-site/)
     - [Contributing Format](./CONTRIBUTING.md)
+- Recommended Books
+    - [CSAPP - CMU](./recommendation/CSAPP_3rd.pdf)
+    - [The Datacenter as a Computer - Google](./recommendation/Google_Datacenter_Computer.pdf)
+    - [C++ CS106L - Stanford](./recommendation/CS106L_Stanford.pdf)
+    - [Computer Networking: a Top Down Approach - UMass Amherst](./recommendation/Top-Down_Networking_7rd.pdf)
 - Acknowledgement
     - [Template](https://github.com/lzzsG/mdBook-pages-template)
     - [mdBook Doc](https://rust-lang.github.io/mdBook/guide/creating.html)
