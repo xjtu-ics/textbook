@@ -15,7 +15,7 @@
 
 - How to contribute
     - [A Tutorial on mdBook](https://blog.bxhu2004.com/BLOG/Markdown/mdbook-site/)
-    - [Inspiration](./ref-template.md)
+    - [Contributing Format](./CONTRIBUTING.md)
 - Acknowledgement
     - [Template](https://github.com/lzzsG/mdBook-pages-template)
     - [mdBook Doc](https://rust-lang.github.io/mdBook/guide/creating.html)

@@ -28,7 +28,10 @@ We welcome contributions from everyone! If you're interested in contributing to 
 4. Make your changes and commit them with clear and concise commit messages.
 5. Push your changes to your forked repository.
 6. Open a pull request to the main repository.
-    - Since _Rule Set_ is in use, you must contribute with a PR.
+    - Since _Rule Set_ is in use, you must contribute with a PR!
+7. Delete your branch after merging it. This keeps the repo clean and faster to sync.
+
+It's always a good habit to check [CONTRIBUTING.md](https://github.com/xjtu-ics/textbook/blob/main/CONTRIBUTING.md) before contributing ⚠️!
 
 If you are curious about how to set up a textbook with mdBook, we have also provided a [detailed tutorial](https://blog.bxhu2004.com/BLOG/Markdown/mdbook-site/) for you to start.
 
