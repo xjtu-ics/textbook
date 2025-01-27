@@ -348,12 +348,12 @@ C++ for VSC 是基于文件夹的，可以给不同的项目文件夹建立不�
 
 **从 archl4edu 源安装**
 
-首先添加 archlinuxcn 源, 如果你没添加过的话:
+首先添加 arch4edu 源, 如果你没添加过的话:
 
 - 编辑 `/etc/pacman.conf` 文件. 你用 vim, neovim, nano 什么都好, 只要你会用就行. 然后在文件末尾添加以下内容:
 
 ```text
-[archlinuxcn]
+[arch4edu]
 SigLevel = Optional TrustAll
 Server = Server = https://mirrors.cernet.edu.cn/arch4edu/$arch
 ```
