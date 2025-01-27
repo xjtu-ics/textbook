@@ -1,10 +1,12 @@
 # VPN
 
-此文章被VPN推销员hacker恶意植入，与本课程组没有任何关系 🐛
+这篇笔记会告诉你一些与VPN有关的概念，并且手把手教你如何“科学上网”
+
+读完此篇，你应该会对“科学上网”有一个非常直观的理解与初印象，这些思考将有助于打破你和相关网络科普博客之间的技术壁垒，并有利于你在未来学习网络虚拟技术😄
 
 ## 为什么要写这篇文章
 
-这篇笔记纯粹是从技术的角度做一个科普，目的绝非提供翻墙的工具（推销员也有一颗科普的心❤️）。
+这篇笔记纯粹是从技术的角度做一个科普，目的绝非提供翻墙的工具！
 
 相信大家作为一名计算机专业学生，在刚接触写代码时，肯定会遇见各种问题。
 
@@ -14,11 +16,11 @@
 
 相信你或多或少会在身边同学的介绍或国内论坛上的推荐中得知“翻墙”这件事，此时你会上网搜索，然后你会多见以下几个概念：
 
-1. 机场
-2. 墙
-3. 梯子
+- 机场
+- 墙
+- 梯子
 
-读完这份笔记，相信你会有一点点朦胧的理解🚀
+我们将在这篇笔记中做一个初步的介绍。
 
 ## VPN的背景
 
@@ -82,19 +84,19 @@ GFW三定律：
 
 进入后选择“产品服务 > 购买服务”
 
-![alt text](./image/vpn-0.png)
+<img src="./image/vpn-0.png" alt="vpn connection" width="80%" />
 
 选择你喜欢的套餐并缴费
 
-![alt text](./image/vpn-1.png)
+<img src="./image/vpn-1.png" alt="vpn connection" width="80%" />
 
 之后你来到首页，选择“您已激活的产品/服务”
 
-![alt text](./image/vpn-2.png)
+<img src="./image/vpn-2.png" alt="vpn connection" width="80%" />
 
 点击你所购买的服务，进入后向下翻找，找到“订阅”
 
-![alt text](./image/vpn-3.png)
+<img src="./image/vpn-3.png" alt="vpn connection" width="80%" />
 
 复制你的“Clash订阅口令”
 
@@ -108,9 +110,11 @@ GFW三定律：
 
 这里推荐的解决方法是：
 
-找你身边翻过墙的同学，让他们给你搭个网桥，使用他们的网下载✈️
+找你身边翻过墙的同学，让他们给你搭个网桥，使用他们的网下载 ✈️
 
-或者你也可以碰碰运气，指不定啥时候github可以登上，然后下载✅
+或者你也可以碰碰运气，指不定啥时候github可以登上，然后下载 ✅
+
+或者你可以带杯奶茶来找助教 😄
 
 ```admonish
 由于 Clash 核心删库导致多个 Clash GUI 客户端也随之停更，很多市面上曾经流行的地址已经失效，显示 404 了，目前更建议使用 Clash Meta 开源内核的客户端。
@@ -123,17 +127,17 @@ GFW三定律：
 
 **下载链接**
 
-[ClashX for Mac 官方地址](https://clashx.org/clashx-download/)（✅︎正常，截止20250126）
+[ClashX for Mac 官方地址](https://clashx.org/clashx-download/)（✅︎正常，截至20250126）
 
 **操作步骤**
 
 启动 ClashX，点击状态栏中的 ClashX 图标，依次选择「配置」、「托管配置」、「管理」，在弹出的界面点击添加订阅:
 
-![alt text](./image/vpn-4.png)
+<img src="./image/vpn-4.png" alt="vpn connection" width="60%" />
 
 点击添加，加入第一步中的clash订阅口令于`URL`栏，并写一个你喜欢的名字于`Config Name`:
 
-![alt text](./image/vpn-5.png)
+<img src="./image/vpn-5.png" alt="vpn connection" width="80%" />
 
 若干秒后将在软件里看到刚刚添加的配置文件，We did it!
 
@@ -141,7 +145,7 @@ GFW三定律：
 
 点击 ClashX 状态栏图标，将「出站模式」选为「规则判断」，在「Proxy」或「Gloabal」策略组中可以选择自己喜欢的线路，然后点击「设置为系统代理」即可开始使用:
 
-![alt text](./image/vpn-6.png)
+<img src="./image/vpn-6.png" alt="vpn connection" width="60%" />
 
 当然，我的个人习惯是开启:
 
@@ -157,7 +161,7 @@ GFW三定律：
 
 **下载链接**
 
-[Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev)（✅︎正常，截止20250126），版本选择在[这里](https://github.com/clash-verge-rev/clash-verge-rev/releases)看
+[Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev)（✅︎正常，截至20250126），版本选择在[这里](https://github.com/clash-verge-rev/clash-verge-rev/releases)看
 
 **操作步骤**
 
@@ -167,19 +171,19 @@ GFW三定律：
 
 **下载链接**
 
-[Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev)（✅︎正常，截止20250126），版本选择在[这里](https://github.com/clash-verge-rev/clash-verge-rev/releases)看
+[Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev)（✅︎正常，截至20250126），版本选择在[这里](https://github.com/clash-verge-rev/clash-verge-rev/releases)看
 
 **导入订阅**
 
-![alt text](./image/vpn-7.png)
+<img src="./image/vpn-7.png" alt="vpn connection" width="80%" />
 
 **选择节点与模式**
 
-![alt text](./image/vpn-8.png)
+<img src="./image/vpn-8.png" alt="vpn connection" width="80%" />
 
 **开启代理**
 
-![alt text](./image/vpn-9.png)
+<img src="./image/vpn-9.png" alt="vpn connection" width="80%" />
 
 恭喜你！现在你已经成功“翻墙”了！🧨✈️🪜
 
@@ -193,4 +197,8 @@ GFW三定律：
 
 走完这份教程，我们在这里简单理解一下（其实不完全正确，但是便于理解）：
 
-![alt text](./image/vpn-10.png)
+<img src="./image/vpn-10.png" alt="vpn connection" width="80%" />
+
+------
+
+© 2025. ICS Team. All rights reserved.
