@@ -328,11 +328,91 @@ C++ for VSC 是基于文件夹的，可以给不同的项目文件夹建立不�
 
 ### For Windows
 
-TODO(Not bxhu)
+前往[VSCode官网](https://code.visualstudio.com/download)下载安装包, 下载结束后双击打开安装包, 按照提示一步步安装即可.
+
+在纯 Windows 环境下搭建开发环境, 尤其是 C/C++ 开发环境是一种精神酷刑. 所以我推荐你用 WSL2, 在 Windows 继承的 Linux 环境中进行开发. 具体教程请参考[这里](https://orion-zhen.github.io/article/how-to-code-on-windows/). 后续的配置同 Linux 部分.
 
 ### For Linux
 
-TODO(Not bxhu)
+首先祝贺你愿意使用 Linux 作为你的主力环境. 恭喜你向极客迈进了一步! 🚀
+
+如果你正在使用 Arch Linux, 那太棒了, 我太喜欢你了! 可以加个 QQ 吗? ❤️
+
+#### Arch Users
+
+对 Arch Linux 用户, 想要安装 VSCode, 有以下三种方式:
+
+1. 从 [arch4edu](https://help.mirrors.cernet.edu.cn/arch4edu) 源安装 (最推荐)
+2. 从 AUR 安装 (需要你能科学上网)
+3. 从 VSCode 官网安装包安装 (不推荐)
+
+**从 archl4edu 源安装**
+
+首先添加 arch4edu 源, 如果你没添加过的话:
+
+- 编辑 `/etc/pacman.conf` 文件. 你用 vim, neovim, nano 什么都好, 只要你会用就行. 然后在文件末尾添加以下内容:
+
+```text
+[arch4edu]
+SigLevel = Optional TrustAll
+Server = Server = https://mirrors.cernet.edu.cn/arch4edu/$arch
+```
+
+- 刷新 pacman 缓存: `sudo pacman -Syyu`
+- 安装 VSCode: `sudo pacman -S visual-studio-code-bin`
+
+**从 AUR 安装**
+
+- 首先确保你有 `yay` 包管理器, 如果没有, 请安装先添加 [archlinux-cn](https://www.archlinuxcn.org/) 源, 然后运行 `sudo pacman -S yay` 安装.
+- 然后运行 `yay -S visual-studio-code-bin` 安装 VSCode.
+
+#### Debian/Ubuntu Users
+
+对于 Debian/Ubuntu 用户, 你可以直接从[VSCode官网](https://code.visualstudio.com/download)下载 `.deb` 安装包, 然后使用 `apt` 安装:
+
+```sh
+sudo apt install <your-downloaded-vscode>.deb
+```
+
+但有一说一, Ubuntu 全是私货, 系统臃肿容易崩溃, 非常不推荐使用.
+
+#### 为什么你应该使用 Arch Linux
+
+**1. 极简主义与高度定制化**
+
+- **纯净起点**：Arch 不预装冗余软件, 安装后仅包含基础系统(base-devel), 用户可完全按需构建系统环境. 这种"空白画布"特性吸引了追求系统精简和掌控力的用户.
+- **DIY 哲学**：从内核模块到桌面环境(如 KDE/GNOME 或轻量级 WM), 所有组件均由用户主动选择, 避免了其他发行版因预装软件导致的资源占用或风格冲突.
+
+**2. 滚动更新与软件时效性**
+
+- **前沿软件生态**：作为滚动更新(Rolling Release)发行版, Arch 用户可直接获取最新稳定版软件(如 Linux 内核、开发工具链), 无需等待大版本升级。对开发者、硬件兼容性(如新显卡支持)或追求新功能的用户至关重要.
+- **更新可控性**：通过定期维护(如查看 [Arch News](https://archlinux.org/news/))和谨慎处理关键包(如 `pacman -Syu` 前检查更新日志), 可有效避免更新冲突.
+
+**3. Arch User Repository (AUR)**
+
+- **海量软件覆盖**：AUR 社区仓库提供超过 8 万个第三方软件包(如小众工具、闭源程序), 通过 `yay`/`paru` 等工具可一键编译安装，极大扩展了软件可用性.
+- **用户贡献驱动**：AUR 的开放性允许用户快速发布新软件包或补丁, 解决了其他发行版仓库更新滞后的问题(例如第一时间体验 beta 版应用).
+
+**4. 卓越的文档与社区**
+
+- **Arch Wiki**: 被公认为 Linux 领域最全面、细致的文档库, 涵盖系统配置、故障排查、软件优化等, 即使非 Arch 用户也常参考.
+- **问题解决效率**: 社区倾向于提供"授人以渔"的解决方案(如解释配置原理而非直接给命令), 有助于用户深入理解系统运作.
+
+**5. 现代工具链与安装简化**
+- **安装体验进化**: 官方提供的 `archinstall` 脚本简化了安装流程, 30 分钟内即可完成基础系统部署, 降低了传统 CLI 安装的学习曲线.
+- **Pacman 包管理**: `pacman` 命令简洁高效(如 `pacman -Syu` 更新全系统, `pacman -Qs` 搜索包), 配合 AUR 助手工具形成强大的软件管理生态.
+
+#### 配置 C/C++ 开发环境
+
+就我个人而言, 我几乎不使用 VSCode 原生的配置文件. 因为我也经常使用 NeoVim, 所以需要跨编辑器通用才行. 我选用的方案是 CMake. 这里就不展开讲解 CMake 的语法和教程了, 可以通过[这个仓库](https://github.com/ttroy50/cmake-examples)来学习 CMake 的用法.
+
+想要让 CMake 与 VSCode 集成, 可以安装以下插件, 这也是我自己在使用的:
+
+- [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
+- [CMake Language Support](https://marketplace.visualstudio.com/items?itemName=josetr.cmake-language-support-vscode)
+- [CMake Integration](https://marketplace.visualstudio.com/items?itemName=go2sh.cmake-integration-vscode)
+
+如果你在寻找跨平台通用的格式化方案, 我推荐 `clang-format`. VSCode 插件 [Clang-Format](https://marketplace.visualstudio.com/items?itemName=xaver.clang-format) 提供了集成方案.
 
 ## 如何使用VSCode进行调试
 
