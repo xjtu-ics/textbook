@@ -1,5 +1,424 @@
 # How to Use VSCode
 
+这篇笔记会手把手教你如何在不同系统的电脑上安装VScode；如何写配置文件，让你的C++代码跑起来；跑起来以后如何Debug...
+
+此外，我们还会从一个“老鸟”程序员的视角，给大家推荐一些辅助后期开发的插件🎉
+
+## 为什么要用 VSCode
+
+都2025年了，不会真有人还在用 [Dev C++](https://www.bloodshed.net/) 等小学生工具写C++代码吧😅
+
+选择VSCode的理由包括但不限于：
+
+1. 开源：版本迭代快，功能齐全
+2. 几乎可以用来编写任何语言、甚至能写文档、渲染PDF：只要是关于文本编辑/代码编辑，VS Code都有相应的插件去支持
+3. 插件市场庞大，客制化程度高：VS Code通过内置的设置和插件市场基本都可以满足你的需求
+
+这就是为什么VSCode被誉为“新编辑器之神” 🔥🔥🔥
+
+```admonish
+一般意义上，我们认为：“编辑器之神”是Vim；“神之编辑器”是Emacs，详见 [《编辑器之战》](https://upclinux.github.io/intro/07/vim-and-emacs/)
+
+但是在2025年的视角来看，笔者更倾向于认为:
+
+“编辑器之神”是VSCode；“神之编辑器”是Vim
+```
+
+## 如何安装 VSCode
+
+### For MacOS
+
+为什么总是把MacOS优先介绍，主要原因有两点：
+
+第一：
+
+笔者是Mac战神，基本没用过Windows（刚上大一用过，太难用了，直接换电脑！）
+
+第二：
+
+我相信在座的绝大多数人都使用windows系统！我猜测是高考结束后被各种论坛（知乎/B站/...）上的“Mac不适合工科学生”等言论吓到了。没办法，只能入手windows😅
+
+在这种背景下，Mac用户作为“长期被忽略”的“少数群体”，很难得到相关的指导与教程😭
+
+另外，以往的任课老师大多会以Windows系统为例说明如何写代码，这对使用苹果电脑也就是Mac的同学很不友好。而且有些老师在编程环境的配置、编辑器的选取上也会有一些忽略，这部分的内容往往让同学们自学；而网上的博客或教程良莠不齐，很多时候会出现版本错误/系统不匹配/配置过时等现象
+
+因此，这份教程提供对于 MacOS (Apple Silicon) 的手把手教学！如果你有什么困惑与建议，欢迎课下跟TA交流🥤
+
+#### 基础编程环境配置
+
+提前说明，下列步骤需要严格遵循给出的顺序，并且要确保全程可以使用“墙外的网”⚠️
+
+**(1) 安装 XCode**
+
+xcode 是苹果提供的一个开发工具集，类似于微软的 visual studio
+
+1. 从 App store 或苹果开发者网站安装 Xcode。
+2. 待XCode安装完毕，安装 `Xcode command line tools`，只需要在CLI中运行：
+    ```sh
+    xcode-select --install
+    ```
+运行命令后，按照指引，你将完成 `Xcode command line tools` 安装🌹
+
+**(2) 安装 Homebrew**
+
+包管理工具让软件的安装（升级）和卸载都变得简便了许多。Homebrew 就是 Mac 下面的这样一个包管理工具（类似于 `apt-get`, `yum`）。
+
+在你电脑的Terminal中，按照[官网给出的安装方式](https://brew.sh/)做：
+
+```sh
+# 一键安装
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**(3) 安装编译器g++**
+
+省流：当你安装好XCode时，它就已经自带g++了🎉
+
+你可以在CLI中看看长啥样：
+
+```sh
+❯ g++ --version
+Apple clang version 15.0.0 (clang-1500.1.0.2.5)
+Target: arm64-apple-darwin24.0.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+```
+
+这里有个很有意思的现象:
+
+```admonish
+明明我装的是g++，为什么上面显示`clang version 15.0.0`?
+
+这是因为在 macOS 上，g++ 实际上是 clang++ 的一个符号链接。macOS 系统自带的编译器工具链并不是 GNU GCC，而是基于 LLVM 的 Clang 工具链。
+
+所以，当你运行 g++ 时，它会调用 Clang 编译器，而 Clang 的版本显示出来了。即使你安装了 GNU 的 GCC 编译器，g++ 可能依然会指向 Clang。
+```
+
+**(4) 安装编辑器VSCode**
+
+VSCode，全名是Visual Studio Code.app，一般缩写成`VSC`
+
+在微软[VSCode官网](https://code.visualstudio.com/)直接下载macOS平台的最新版本即可
+
+下载安装后，双击打开应用即可，所有的安装流程到此结束，下面开始书写配置文件
+
+#### 书写配置文件
+
+VSCode对c++的配置是以文件夹（及其内部的文件系统）为覆盖单位，这点跟python不同。python有全局，也有基于文件夹的虚拟环境(pyenv)，也有池化的(conda)。
+
+C++ for VSC 是基于文件夹的，可以给不同的项目文件夹建立不同的配置。
+
+这里笔者介绍的主要应用场景是 单文件cpp 的编译（比如你要写洛谷的算法题），并不一定适用于 CMake 等工具。
+
+我会在每一个部分附上参考脚本，它们都是开箱即用的，你可以直接复制粘贴到你的项目中🎉
+
+**（1）建立项目文件夹**
+
+我们需要先选中/新建一个合适的项目文件夹，然后使用VSCode打开它，在这里我们将书写“专用于这个文件夹”的配置文件。
+
+形如这份项目构建示意图 (你可以自动忽略`.venv` / `mathlib_dynamic` / `mathlib_project` / `.DS_Store` 及其子文件系统)：
+
+<img src="./image/vscode-0.png" alt="vpn connection" width="60%" />
+
+```
+❯ tree -L 2 -a
+.
+├── .DS_Store
+├── .build
+├── .clang-format
+├── .venv
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   ├── pyvenv.cfg
+│   └── share
+├── .vscode
+│   ├── c_cpp_properties.json
+│   ├── launch.json
+│   ├── settings.json
+│   └── tasks.json
+├── compile_flags.txt
+├── mathlib_dynamic
+│   ├── lib
+│   ├── main
+│   ├── main.cpp
+│   ├── mathlib.cpp
+│   └── mathlib.h
+└── mathlib_project
+    ├── lib
+    ├── main
+    ├── main.cpp
+    ├── mathlib.cpp
+    └── mathlib.h
+
+12 directories, 16 files
+```
+
+所有对c++的配置都在`.vscode`文件夹下，其余我们先暂时不用管
+
+**（2）配置文件**
+
+1. 确保 `clang++` 已经正确安装（通过 `clang++ -v` 可以验证）
+    - 对于 macOS，运行 `xcode-select --install` 可以安装好本文用到的所有包
+2. 确保 vscode 已启用 [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb) 插件（报错无法下载可以先按报错给的 url 用浏览器下载，然后手动安装）
+3. `tasks.json`，放入 `.vscode` 文件夹中
+4. `launch.json`，放入 `.vscode` 文件夹中
+5. 在文件夹里新建一个 `.build` 文件夹（ macOS / Linux 必做）
+    - 把所有的可执行文件放到 `./build/` 文件夹下，这样可以避免污染项目根目录，也可以方便地清理编译产生的中间文件。
+6. 按 F5 (FN + F5)，就可以编译调试了
+
+参考的`task.json`:
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: clang++ build active file",
+            "command": "/usr/bin/clang++", // `which clang++` may help you find this path
+            "args": [
+            "--std=c++17",
+            "-fcolor-diagnostics",
+            "-fansi-escape-codes",
+            "-g",
+            "${file}",
+            "-o",
+            "${workspaceFolder}/.build/${fileBasenameNoExtension}"
+            "-fstandalone-debug", // to enable viewing std::string etc. when using lldb on Windows or Linux 
+            ],
+            "options": {
+            "cwd": "${fileDirname}"
+            },
+            "group": {
+            "kind": "build",
+            "isDefault": true
+            },
+            "detail": "Task generated by Debugger."
+        }
+    ]
+}
+```
+
+参考的`launch.json`:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+        "name": "C/C++: clang++ build and debug active file customize",
+        "type": "lldb",
+        "request": "launch",
+        "program": "${workspaceFolder}/.build/${fileBasenameNoExtension}",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "preLaunchTask": "C/C++: clang++ build active file"
+        },
+        {
+        "name": "C/C++ Runner: Debug Session",
+        "type": "lldb",
+        "request": "launch",
+        "args": [],
+        "cwd": "/Users/huluobo/code_projects/vscode",
+        "program": "/Users/huluobo/code_projects/vscode/build/Debug/outDebug"
+        }
+    ]
+}
+```
+
+参考的`c_cpp_properties.json`:
+
+```json
+{
+  "configurations": [
+    {
+      "name": "macos-clang-arm64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "compilerPath": "/usr/bin/clang",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "macos-clang-arm64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}
+```
+
+参考的`settings.json`:
+
+```json
+{
+  "files.associations": {
+    "iostream": "cpp",
+    "cstring": "cpp",
+    "algorithm": "cpp",
+    "queue": "cpp",
+    "iomanip": "cpp",
+    "__config": "cpp"
+  },
+  "C_Cpp_Runner.cCompilerPath": "clang",
+  "C_Cpp_Runner.cppCompilerPath": "clang++",
+  "C_Cpp_Runner.debuggerPath": "lldb",
+  "C_Cpp_Runner.cStandard": "",
+  "C_Cpp_Runner.cppStandard": "",
+  "C_Cpp_Runner.msvcBatchPath": "",
+  "C_Cpp_Runner.useMsvc": false,
+  "C_Cpp_Runner.warnings": [
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "-Wshadow",
+    "-Wformat=2",
+    "-Wcast-align",
+    "-Wconversion",
+    "-Wsign-conversion",
+    "-Wnull-dereference"
+  ],
+  "C_Cpp_Runner.msvcWarnings": [
+    "/W4",
+    "/permissive-",
+    "/w14242",
+    "/w14287",
+    "/w14296",
+    "/w14311",
+    "/w14826",
+    "/w44062",
+    "/w44242",
+    "/w14905",
+    "/w14906",
+    "/w14263",
+    "/w44265",
+    "/w14928"
+  ],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.compilerArgs": [],
+  "C_Cpp_Runner.linkerArgs": [],
+  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.includeSearch": [
+    "*",
+    "**/*"
+  ],
+  "C_Cpp_Runner.excludeSearch": [
+    "**/build",
+    "**/build/**",
+    "**/.*",
+    "**/.*/**",
+    "**/.vscode",
+    "**/.vscode/**"
+  ],
+  "C_Cpp_Runner.useAddressSanitizer": false,
+  "C_Cpp_Runner.useUndefinedSanitizer": false,
+  "C_Cpp_Runner.useLeakSanitizer": false,
+  "C_Cpp_Runner.showCompilationTime": false,
+  "C_Cpp_Runner.useLinkTimeOptimization": false,
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
+}
+```
+
+现在你的C++代码应该可以跑起来了, Congratulates!
+
+如果你好奇这些json是干什么用的，它们对VSC做了什么，欢迎移步至[这篇Blog](https://blog.bxhu2004.com/BLOG/vscode-cpp/config/#vscode-for-macos)。这篇笔记的配置部分到此结束！
+
+### For Windows
+
+TODO(Not bxhu)
+
+### For Linux
+
+TODO(Not bxhu)
+
+## 如何使用VSCode进行调试
+
+这一部分强烈建议跟着[官方文档](https://code.visualstudio.com/docs/editor/debugging#_debug-actions)走一通
+
+如果你觉得不够直观，可以看看这个: [一份CMU强烈推荐的Debugging Tutorial](https://www.youtube.com/watch?v=G9gnSGKYIg4)
+
+这些调试的技巧将会非常有利于你构建大规模代码库
+
+## VSCode中的插件推荐
+
+这一部分笔者会给一些自用的VSC插件推荐，亲测好用，不仅能提升日常代码开发效率，也可以美化界面，提升写代码的幸福感
+
+当然这只是很小的一部分，如果你有什么比较好的建议，欢迎在仓库的issue中提出，或者提个PR👏
+
+
+0）[Chinese (Simplified)](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans)
+
+适用于 VS Code 的中文（简体）语言包👄
+
+1）[Dracula Theme Official](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula)
+
+一个非常适合程序员的主题，通过美观度提升写代码的幸福感😘
+
+2）[C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
+写大型项目必备的道具，支持“一键跳转”等功能，神中神💰
+
+3）[Github Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+
+这个不用说了吧🚀
+
+<img src="./image/vscode-1.png" alt="vpn connection" width="70%" />
+
+4）[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+
+能够清晰地显示不同分支，并且进行快捷操作，神中神😍
+
+<img src="./image/vscode-2.png" alt="vpn connection" width="80%" />
+
+5）[GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+
+清晰地显示每行代码的提交者，方便“找锅”😄
+
+![alt text](./image/vscode-3.png)
+
+6）[Gitmoji](https://marketplace.visualstudio.com/items?itemName=seatonjiang.gitmoji-vscode)
+
+让你的每个commit信息变得有趣👍
+
+```sh
+# my personal format
+🎉 (branch_name) commit message
+```
+
+7）[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+在VSC中快捷使用默认浏览器渲染HTML网页🛜
+
+<img src="./image/vscode-4.png" alt="vpn connection" width="80%" />
+
+8）[vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) 和 [PDF Preview](https://marketplace.visualstudio.com/items?itemName=analytic-signal.preview-pdf)
+
+PDF预览👌
+
+9）[Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+
+SSH远程连接🎉
+
+10）[TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
+
+高亮显示TODO等信息，醒目🌟
+
+![alt text](./image/vscode-5.png)
+
+11）[indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+
+高亮缩进，便于观察，尤其是大型项目开发👀
+
+![alt text](./image/vscode-6.png)
+
+12）[CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
+
+适合给代码截屏并展示，很美观👍
+
+<img src="./image/vscode-7.png" alt="vpn connection" width="80%" />
 
 ------
 
