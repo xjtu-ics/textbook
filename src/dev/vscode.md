@@ -355,7 +355,7 @@ C++ for VSC 是基于文件夹的，可以给不同的项目文件夹建立不�
 ```text
 [arch4edu]
 SigLevel = Optional TrustAll
-Server = Server = https://mirrors.cernet.edu.cn/arch4edu/$arch
+Server = https://mirrors.cernet.edu.cn/arch4edu/$arch
 ```
 
 - 刷新 pacman 缓存: `sudo pacman -Syyu`
