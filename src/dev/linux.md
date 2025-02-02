@@ -2,6 +2,10 @@
 
 ## 为什么你应该用 Linux
 
+> 冷知识0: 在 Linux 下一样可以玩 Windows 上的游戏, 诸如 Steam 上的各种游戏, 且很多时候性能比 Windows 更好. 你可以在 [ProtonDB](https://www.protondb.com) 上检查你 Steam 上喜欢的游戏的兼容性和性能
+> 冷知识1: Arch Linux 的官方源里包含 Steam, 你可以直接从包管理器安装 Steam, 免去了上网和诈骗网站/Steam助手等斗智斗勇的烦恼
+> 冷知识2: Mac(Apple Silicon) 对 Steam 的兼容性稀烂, 尤其是大型游戏
+
 1. 贴近生产环境与开发者工具链
    - 服务器环境主导: 绝大多数服务器, 云计算平台(如 AWS, Azure), 容器技术(如 Docker/Kubernetes)均基于 Linux. 熟悉 Linux 的操作和运维是开发者必备技能.
    - 原生开发工具链: Linux 对编程语言(Python, C/C++, Java, Go 等), 编译器(GCC/Clang), 调试工具(GDB), 构建工具(Make/CMake)以及脚本环境(Bash)的支持更原生, 无需依赖第三方模拟器或兼容层.
@@ -18,6 +22,11 @@
 5. 轻量化与资源效率
    - 低资源占用: Linux 对硬件资源(CPU, 内存)的需求更低, 适合在虚拟机, 老旧设备或笔记本上流畅运行, 提升开发效率.
    - 稳定性与安全性: Linux 系统崩溃概率低, 病毒攻击风险小, 适合长期运行的开发任务.
+
+> Windows 和 Linux 占用资源对比:
+> 我同一台电脑, 桌面壁纸采用 Wallpaper engine 加载同一张动态壁纸
+> Windows 11 进入系统, 任务管理器显示显存占用 5.9 GB
+> Arch Linux 进入 KDE Plasma 桌面, 任务管理器显示显存占用 0.8 GB
 
 ## Linux 小知识
 
