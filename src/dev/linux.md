@@ -338,7 +338,7 @@ sudo pacman -S yay
 sudo pacman -S fcitx5-im fcitx5-chinese-addons
 ```
 
-然后在 系统设置 > 虚拟键盘中 选择 Fcitx5 作为输入法.
+然后在 系统设置 > 虚拟键盘 中选择 Fcitx5 作为输入法.
 
 ### 终端美化
 
@@ -384,6 +384,55 @@ curl -fsSL https://raw.githubusercontent.com/Orion-zhen/dotfiles/main/.zshrc -o 
 ```
 
 现在重启电脑, 你应该可以看到一个漂亮的终端了.
+
+## Linux 入门
+
+### 包管理器
+
+Linux 下, 安装软件都应该从包管理器安装. 这和 Windows 下需要上网找安装包然后自行安装的方式有很大的不同. 正是这个包管理器机制, 让 Linux 下的软件安装和更新变得如此简单.
+
+一个内容重组的包管理器软件源就显得尤为重要. 这也正是 Arch Linux 的优势区间所在. Arch 官方源中本身就有非常丰富的软件, Arch User Repository (AUR) 则是由广大 Arch 用户提供的软件仓库. 你总能找到你想要的软件包.
+
+### pacman
+
+Pacman软件包管理器是 Arch Linux 的一大亮点. 它将一个简单的二进制包格式和易用的构建系统结合了起来. Pacman的目标是简化对软件包的管理, 无论软件包是来自官方软件仓库还是用户自己创建的软件包.
+
+Pacman 通过和主服务器同步软件包列表来保持系统是最新的. 这种服务器/客户端模式可使得用户使用简单的命令, 就能下载或安装软件包, 并包含其所有必需的依赖包.
+
+Pacman 用 C 语言编写, 并使用 bsdtar(1) tar 作为打包格式.
+
+具体参考 [archwiki -> pacman](https://wiki.archlinuxcn.org/wiki/Pacman)
+
+### 软件源
+
+可以向 `/etc/pacman.conf` 的末尾追加软件源. 例如前文已经向你展示了两个比较常用的软件源: archlinuxcn 和 arch4edu. 这里再补充几个好用的软件源:
+
+- [chaotic-aur](https://aur.chaotic.cx/): 构建了很多 AUR 软件包
+- [alerque](https://github.com/alerque/aur): 提供了很多字体
+- [our](https://orion-zhen.github.io/our): 我自己构建的软件源, 包含了诸如 QQ, 微信, 腾讯会议, 钉钉等未被 archlinuxcn 和 archedu 收录的软件, 以及一些妙妙工具
+
+以上提到的软件源可以如下导入:
+
+```text
+# /etc/pacman.conf
+[chaotic-aur]
+SigLevel = Optional TrustAll
+Server = https://geo-mirror.chaotic.cx/$repo/$arch
+
+[alerque]
+SigLevel = Optional TrustAll
+Server = https://arch.alerque.com/$arch
+
+[our]
+SigLevel = Optional TrustAll
+Server = https://orion-zhen.github.io/our/$arch
+```
+
+### AUR 助手
+
+安装 AUR 软件总是很麻烦: 你要将 AUR 仓库克隆下来, 然后手动编译安装. 幸运的是, 有一个叫做 yay 的 AUR 助手可以自动化这一过程. 具体参考 [archwiki -> yay](https://wiki.archlinuxcn.org/wiki/Yay)
+
+> 当然你也可以学我, 自己打包 AUR 软件并发布软件源 😉
 
 ------
 
