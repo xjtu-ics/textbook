@@ -3,7 +3,9 @@
 ## 为什么你应该用 Linux
 
 > 冷知识0: 在 Linux 下一样可以玩 Windows 上的游戏, 诸如 Steam 上的各种游戏, 且很多时候性能比 Windows 更好. 你可以在 [ProtonDB](https://www.protondb.com) 上检查你 Steam 上喜欢的游戏的兼容性和性能
+>
 > 冷知识1: Arch Linux 的官方源里包含 Steam, 你可以直接从包管理器安装 Steam, 免去了上网和诈骗网站/Steam助手等斗智斗勇的烦恼
+>
 > 冷知识2: Mac(Apple Silicon) 对 Steam 的兼容性稀烂, 尤其是大型游戏
 
 1. 贴近生产环境与开发者工具链
@@ -24,8 +26,11 @@
    - 稳定性与安全性: Linux 系统崩溃概率低, 病毒攻击风险小, 适合长期运行的开发任务.
 
 > Windows 和 Linux 占用资源对比:
+>
 > 我同一台电脑, 桌面壁纸采用 Wallpaper engine 加载同一张动态壁纸
+>
 > Windows 11 进入系统, 任务管理器显示显存占用 5.9 GB
+>
 > Arch Linux 进入 KDE Plasma 桌面, 任务管理器显示显存占用 0.8 GB
 
 ## Linux 小知识
