@@ -424,7 +424,7 @@ Pacman 用 C 语言编写, 并使用 bsdtar(1) tar 作为打包格式.
 
 - [chaotic-aur](https://aur.chaotic.cx/): 构建了很多 AUR 软件包
 - [alerque](https://github.com/alerque/aur): 提供了很多字体
-- [our](https://orion-zhen.github.io/our): 我自己构建的软件源, 包含了诸如 QQ, 微信, 腾讯会议, 钉钉等未被 archlinuxcn 和 archedu 收录的软件, 以及一些妙妙工具
+- [our](https://orion-zhen.github.io/our): 我自己构建的软件源, 包含了诸如 QQ, 微信, 腾讯会议, 钉钉等未被 archlinuxcn 和 archedu 收录的软件, 以及一些妙妙工具, 如果喜欢的话记得给个 star 哦 😉
 
 以上提到的软件源可以如下导入:
 
@@ -608,7 +608,7 @@ less test.txt
 find [options] <path> [expression]
 ```
 
-| expression | 含义 | 示例|
+| expression | 含义 | 示例 |
 | --- | --- | --- |
 | `-name` | 根据文件名查找 | `-name "*.txt"` 即寻找所有以 `.txt` 结尾的文件, `*` 是通配符 |
 | `-type` | 根据文件类型查找 | `-type f` 即寻找普通文件, `-type d` 即寻找目录 |
