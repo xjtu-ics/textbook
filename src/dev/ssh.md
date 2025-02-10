@@ -82,7 +82,7 @@ ssh user@host [-p port]
 
 ````admonish tip
 首次登陆时终端会显示类似这样的一段话（例如ssh首次登陆github）：  
-```
+```text
 The authenticity of host '[ssh.github.com]:443 (<no hostip for proxy command>)' can't be established.  
 ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.  
 This key is not known by any other names.  
@@ -93,11 +93,11 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 大部分安全（相信我，没人会攻击你每月几块钱的云服务器的 :blush:）的情况下，可以直接输入`yes`。  
 对于公开的服务器，比如Github，官方一般会提供`fingerprint`供用户验证，例如[Github SSH Key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) 。   
 输入fingerprint并按下回车，这时终端会提示：  
-```
+```text
 Please type 'yes', 'no' or the fingerprint:
 ```
 此时输入官方提供的fingerprint，如果验证通过，则终端会提示：  
-```
+```text
 Warning: Permanently added '[ssh.github.com]:443' (ED25519) to the list of known hosts.
 ```
 表示这台服务器通过了认证，并且会永久添加到`known_hosts`，这是`~/.ssh/`目录下的一个文件。  
@@ -188,7 +188,7 @@ TODO: login EXAMPLE
 
 ssh的配置文件位于`~/.ssh/config`，如果没有就创建一个，使用编辑器（推荐`vim/neovim`，毕竟是神之编辑器）打开这个文件，然后输入以下内容（具体内容替换成自己的）
 
-```
+```text
 Host hostname
     HostName host
     User user
@@ -356,9 +356,166 @@ DH算法从根本上**移除了会话密钥在网络中传输**的步骤，而�
 
 ### vscode使用SSH进行远程开发
 
-### github使用SSH
+### Github使用SSH
 
-### 使用SSH连接自己的虚拟机
+到了这个阶段，相信你已经接触过了github（什么？你没用过github，那么请移步这一篇 ），且已经学会了科学上网（不知道什么是科学上网？那我没法教你了，自行搜索或者问同学吧，或者带杯奶茶来**面基**助教也是可以）。
+
+出于众所周知的原因，大量的境外网站我们是无法访问的，github作为一个例外（可以不挂梯子直接访问，但是由于DNS污染，以及最近网速肉眼可见的变慢，建议还是使用梯子访问），给我们提供了天然的中转地，因此这一部分教大家如何使用代理和ssh方式访问github。
+
+Github作为全世界有名的～～同性交流网站～～代码托管平台，可以和git搭配使用从而进行十分方便的代码托管和版本控制。
+
+这其中最重要的两个操作莫过于`git pull`和`git clone`以及`git `等。前者从github拉取代码或者下载完整副本，后者将本地仓库代码上传至github远程仓库。
+
+github对于上述操作提供了两种访问方式，分别是**https**和**ssh**。比如，当我们需要clone一个仓库到本地时，点击仓库右上角的code，会分别提供https和ssh的链接
+
+<img src="./image/ssh-10.png" alt="git clone" width="80%">
+
+将上述链接复制，然后输入：
+
+```bash
+git clone git@github.com:xjtu-ics/textbook.git 
+```
+
+即可复制远程仓库到本地，并且在本地自动关联远程仓库。
+
+在不使用代理的情况下，实测发现使用https的成功率可以忽略不计，使用ssh的成功率则高很多（最近不知道什么原因，ssh的成功率也可以忽略不计）。当然，当你无法使用代理时，你也可以点击Download zip手动下载压缩包并解压。不过，既然能使用代理解决，何必多此一举呢。
+
+下面我们教大家如何设置https的代理和ssh的代理，并且更推荐使用ssh。
+
+假设你已经准备好了代理，不管用什么方式，首先记录下代理的端口，比如这是我笔记本上的：
+
+<img src="./image/ssh-11.png" alt="git clone" width="80%">
+
+使用http协议的端口为20171，socks5协议端口为20170。
+
+如果要使用https与github进行交互，那么代理几乎是必挂的，使用以下两条命令为git添加github的代理（更推荐使用socks5代理，如果使用http代理，则将代理url的协议名改成http）
+
+```bash
+git config --global http.https://github.com.proxy socks5://127.0.0.1:20170
+git config --global https.https://github.com.proxy socks5://127.0.0.1:20170
+```
+
+上述方式**指定了为域名https://github.com设置代理**，其他域名的流量不走代理，因此是推荐的做法。
+
+如果你嫌麻烦，那么设置全局代理也是可以的：
+
+```bash
+git config --global http.proxy socks5://127.0.0.1:20170
+git config --global https.proxy socks5://127.0.0.1:20170
+```
+
+不过这种方式将git的**全部流量都从代理进行转发**，当你用git访问一些不需要挂代理的网站（比如gitee等），就需要关闭代理，特别麻烦，因此并不推荐这么做。
+
+如果要取消设置，使用：
+
+```bash
+git config --global --unset http.https://github.com.proxy
+git config --global --unset https.https://github.com.proxy
+```
+
+如果你设置的是全局代理，那么这样取消设置：
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+查看一下git的设置：
+
+```bash
+git config --list
+```
+
+如果包含类似下面两行，说明代理设置成功了：
+
+```text
+http.https://github.com.proxy=socks5://127.0.0.1:20170
+https.https://github.com.proxy=socks5://127.0.0.1:20170
+```
+
+只要代理工作正常，基本上就可以使用https进行clone了，且速度还挺快的。
+
+不过，使用https的方式，**每次和github交互都需要输入密码**，十分不方便且安全性也不高，因此更加建议使用ssh进行连接。
+
+ssh的使用和ssh远程登陆的流程差不太多，首先在本地生成ssh密钥对，然后将公钥上传至github。
+
+进入github官网 -> 右上角自己头像 -> 下拉菜单选择**设置** -> 左边栏选择**SSH and GPG keys** 进入SSH key管理页面：
+
+<img src="./image/ssh-11.png" alt="git clone" width="80%">
+
+点击右上角**New SSH key**，随便输入一个title, 将自己本地的公钥内容复制到key里面（注意key的格式要求，不要复制少了！一般将`id_rsa.pub`文件的内容全部复制就行）：
+
+<img src="./image/ssh-12.png" alt="git clone" width="80%">
+
+最后点击**Add SSH key**，退回到ssh key管理界面，就可以看到自己最新添加的公钥了。
+
+接着修改SSH配置文件，加入下面的内容：
+
+```text
+Host github.com
+    HostName github.com
+    User git
+    # using socks5 proxy
+    ProxyCommand ncat --proxy 127.0.0.1:20170 --proxy-type socks5 %h %p
+    # private key path(change it to your own path)
+    IdentityFile "~/.ssh/id_rsa"
+```
+
+具体解释一下代理设置的那一行：
+- `ProxyCommand`选项表示使用代理，SSH连接时会执行这个选项后面的命令
+- `ncat`是一个命令行工具，具体根据自己的linux发行版进行安装，可以指定使用代理连接特定的服务器
+- `--proxy`指定本地代理服务器，实际使用时**替换成自己的服务器地址，尤其是端口号**
+- `--proxy-type`指定代理类型，可以使用http或者socks5
+- `%h %p`是占位符，表示主机名和端口，实际连接时会自动替换成ssh的目标主机名和端口号
+
+修改完成后，使用`ssh -T git@github.com`进行测试，如果出现类似以下结果，则表示ssh连接成功：
+
+```text
+Hi Scorpicathe! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+有些环境中，比如某些企业的内网会设置防火墙阻止ssh流量通过22端口进行转发，万幸的是，github提供了一种方式可以使用https端口，即443端口建立ssh连接。
+
+首先测试443端口是否可行：
+
+```bash
+ssh -T -p 443 git@ssh.github.com
+```
+
+注意，443端口的github域名为`ssh.github.com`，使用时注意修改。
+
+如果出现类似以下内容，说明端口有效：
+
+```text
+Hi Scorpicathe! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+否则的话，查阅[Github官方文档](https://docs.github.com/zh/authentication/troubleshooting-ssh/error-permission-denied-publickey)进行错误排查。
+
+于是，当需要使用ssh的时候，将github的地址`github.com`改为`ssh.github.com`即可，比如：
+
+```bash
+git clone ssh://git@ssh.github.com:443/xjtu-ics/textbook.git 
+```
+
+不过每次clone时修改url显然是一件很烦的事，可以修改ssh配置文件来避免：
+
+将配置文件改成以下内容：
+
+```text
+Host github.com
+    HostName ssh.github.com
+    Port 443
+    User git
+    # using socks5 proxy
+    ProxyCommand ncat --proxy 127.0.0.1:20170 --proxy-type socks5 %h %p
+    # private key path
+    IdentityFile "~/.ssh/id_rsa"
+```
+
+这样设置强制ssh每次连接通过443端口来进行，因此可以绕过防火墙。
+
+上述不过是ssh连接github的冰山一角，更多信息请咨询[GitHub Docs](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/about-ssh)
 
 ------
 
