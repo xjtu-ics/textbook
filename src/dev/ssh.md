@@ -78,6 +78,10 @@ ssh user@host [-p port]
 
 输入上述命令之后，如果没有问题，终端会提示让你输入密码（首次登陆密码一般会告知你，或者按照自己重新设置的密码），
 
+```admonish
+输入密码的时候，终端不会有任何显示，不会显示密码原文或是*，防止别人窃取密码内容或密码长度。
+```
+
 正确输入密码之后，终端上如果输出一堆系统信息，然后打印出远程主机的终端提示符，则说明我们成功登陆了 :tada:
 
 ````admonish tip
@@ -117,8 +121,26 @@ fingerprint指公钥的**数字指纹**，由服务器公钥通过特定哈希�
 如果需要将服务器部署在公网，通过建议在第一次登陆之后就**禁用密码登陆**或者**限制尝试次数**，以及**修改ssh默认端口**等一系列复杂的操作来确保安全。
 ```
 
+```admonish tip
+登陆之前确保在远程服务器上已经安装了ssh服务器，通常是openssh-server，如果没有安装的话根据自己的linux发行版google如何安装吧，这里就不展开讲了。
+```
+
+```admonish tip
+如果出现了`Permission denied (publickey).`，通常是远程服务器**禁用**了密码登陆服务器，这时候必须使用密钥验证进行登陆。  
+  
+如果你可以操作远程主机打开密码登陆，则修改ssh服务器的配置文件`/etc/ssh/sshd_config`，找到`PasswordAuthentication no`这一行，将其注释掉，然后使用`sudo systemctl restart ssh`重启ssh服务。
+```
+
 ```admonish example
-TODO: login EXAMPLE
+这里给出一个登陆的例子，假设我的本地主机和远程主机在同一个局域网内，远程主机ip为192.168.110.242，假如不知道远程主机ip的话，可以在远程主机上使用`ifconfig`命令查看。  
+
+现在远程主机创建了一个用户叫做ttang，接着输入ssh命令进行连接，出现以下内容：  
+
+<img src="./image/ssh-25.png" alt="vscode remote" width="80%" />
+
+上述欢迎界面说明登陆成功。  
+
+如果是公网服务器等，将远程ip换成对应的公网ip或者域名，如不知道，请联系相应的服务器管理员。
 ```
 
 ##### 密钥登陆
@@ -133,9 +155,17 @@ ssh-keygen
 
 这条命令默认使用ED25519算法生成长度为256位的密钥对
 
+```admonish
+OpenSSH较新的版本已经将默认的rsa密钥生成算法改成了ed25519，这时更加现代的做法，兼顾了安全性和效率。
+```
+
 一些常用可选项：
 - `[-t rsa | dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk | rsa]`：指定加密算法，不同加密算法复杂性和安全性也不同
 - `[-b bits]`指定密钥长度，有些加密算法，如rsa，密钥长度是可以变化的
+
+```admonish
+对于 RSA 算法, 常见的长度是 2048, 3072, 4096. 一般推荐 3072 长度, 是安全性和性能的最佳平衡，4096 长度的密钥能提供最高的安全性, 但是加解密的时间会显著增加。不过在现代计算机上, 椭圆加密的 ed25519 是更好的选择, 因为它兼顾了安全性和性能.
+```
 
 输入以下命令了解更多：
 ```bash
@@ -163,7 +193,7 @@ ls /your/path/to/ssh/keypair
 然后我们需要将公钥复制到服务器上，这可以使用以下命令：
 
 ```bash
-ssh_copy_id [-i /your/path/to/ssh/keypair.pub user@host]
+ssh_copy_id [-i /your/path/to/ssh/keypair.pub] user@host
 ```
 
 上述命令`-i`选项指定公钥文件目录，如果你没有自己指定密钥名，则可以省略这个选项
@@ -177,7 +207,22 @@ ssh user@host [-i /your/path/to/ssh/keypair]
 如果你不是默认路径，使用`-i`选项指定路径即可
 
 ```admonish example
-TODO: login EXAMPLE
+接着上面的例子，首先在本地生成ssh密钥对：  
+
+<img src="./image/ssh-29.png" alt="vscode remote" width="80%" />
+
+查看一下生成的公钥：  
+
+<img src="./image/ssh-30.png" alt="vscode remote" width="80%" />
+
+将公钥复制到服务器上：  
+
+<img src="./image/ssh-26.png" alt="vscode remote" width="80%" />
+
+使用ssh进行免密登陆：  
+
+<img src="./image/ssh-27.png" alt="vscode remote" width="80%" />
+
 ```
 
 ##### 配置config文件快速登陆
@@ -211,11 +256,25 @@ ssh hostname
 
 即可成功登陆，是不是简单了很多呢
 
-```admonish example
-TODO: login EXAMPLE
+````admonish example
+编写ssh配置文件如下：  
+
+```text
+Host myhost
+    HostName 192.168.110.242
+    User ttang
+    #IdentityFile "~/.ssh/id_rsa"
 ```
 
+直接使用myhost进行登陆：  
+
+<img src="./image/ssh-28.png" alt="vscode remote" width="80%" />
+
+````
+
 #### For MacOS
+
+MacOS系统的步骤和Linux完全相同，这里就不再赘述了。
 
 #### For Windows
 
@@ -475,7 +534,7 @@ Host myhost
 
 出于众所周知的原因，大量的境外网站我们是无法访问的，github作为一个例外（可以不挂梯子直接访问，但是由于DNS污染，以及最近网速肉眼可见的变慢，建议还是使用梯子访问），给我们提供了天然的中转地，因此这一部分教大家如何使用代理和ssh方式访问github。
 
-Github作为全世界有名的～～同性交流网站～～代码托管平台，可以和git搭配使用从而进行十分方便的代码托管和版本控制。
+Github作为全世界有名的~~同性交流网站~~代码托管平台，可以和git搭配使用从而进行十分方便的代码托管和版本控制。
 
 这其中最重要的两个操作莫过于`git pull`和`git clone`以及`git `等。前者从github拉取代码或者下载完整副本，后者将本地仓库代码上传至github远程仓库。
 
