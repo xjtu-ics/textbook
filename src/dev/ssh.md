@@ -356,9 +356,122 @@ DH算法从根本上**移除了会话密钥在网络中传输**的步骤，而�
 
 ### vscode使用SSH进行远程开发
 
+如果说vscode相比于其他一体化的IDE的优势，那么vscode强大的**远程开发**功能必然榜上有名。
+
+远程开发可以**将本地环境和开发环境隔离**，避免了本地的开发环境配置问题（比如windows配置c++开发环境非常困难），同时解除了本地环境和开发环境的地理限制。
+
+如果你手边没有Linux环境，那么我强烈建议你搭建一个Linux开发环境，尤其是使用windows的同学（macOS同学看个人喜好）。
+
+一方面Linux相比windows，更加适用于搭建开发环境，另一方面，使用Linux环境可以不知不觉中强化自己对Linux命令的使用（你一点不会Linux？那么请移步这一篇 ）。
+
+不过，在使用Linux的同时，我个人还是建议你手边准备一台windows**以备不时之需**（比如办公，游戏等，更重要的是**预防学校某些实验课要安装的臭不可闻的软件**）
+
+Linux的环境一般有以下几种选择：
+- 租一个云服务器（个人不推荐，但是如果你有强烈的公网环境需求或者算力需求或是学校或机构有丰富服务器资源，那么当我没说）
+- Linux物理机（推荐，如果你觉得自己无法驾驭，那还是算了）
+- Linux/windows双系统（都双系统了，还是一步到位物理机了吧）
+- windows+linux虚拟机（推荐，但是更建议wsl）
+- windows+wsl（推荐，毕竟曾经被称为最好的linux发行版）
+
+如果你比较激进，而且喜欢折腾，或者手边不止一台电脑，那么直接安装linux物理机再好不过。
+
+如果你有强烈的windows需求，而且只有一台电脑，那么我建议你使用windows+linux，linux可以使用windows下的虚拟机环境（vmware等），或者wsl2。
+
+如果你决定选择使用vmware等虚拟机软件，那么我建议**不要安装linux的图形界面**，将linux作为一个命令行终端的接口来使用。
+
+常用的方式是使用vscode远程开发功能连接自己的服务器或者虚拟机或者wsl。这样既保留了windows环境，又支持使用linux开发环境。
+
+好了，让我们回归正题，如何使用vscode进行远程开发：
+
+vscode远程开发基于ssh连接，ssh在本地vscode客户端和远程vscode服务器上建立了一条连接通道，这里借用[vscode docs](https://code.visualstudio.com/docs/remote/ssh)的图片来解释：
+
+<img src="./image/ssh-14.png" alt="vscode remote" width="80%" />
+
+vscode客户端就是本地下载安装的vscode，而vscode server是远程主机上的一个进程，当进行远程连接时，客户端会复用自己的一些主题插件，而服务器会自动下载安装一些开发环境相关的插件。
+
+首先，你需要安装一个名为**Remote-SSH**的插件：
+
+<img src="./image/ssh-15.png" alt="vscode remote" width="80%" />
+
+安装完成之后，你的插件列表应该会出现了3个已安装的插件：
+
+<img src="./image/ssh-16.png" alt="vscode remote" width="80%" />
+
+第一个插件，Remote - SSH，帮助你连接到远程主机。
+
+第二个插件，Remote - SSH: Editing Configuration Files，用于修改ssh配置文件
+
+第三个插件，Remote Explorer，这个就很牛逼了，提供图形化界面用于访问远程主机的目录等，让用户感觉自就好像在本地开发一样。
+
+现在你的左侧栏应该会出现一个远程主机的图标，点开他，在右侧会出现REMOTES的菜单栏，点开外层下拉框，里面会出现名为SSH的下拉框，继续点开SSH，即可呈现所有的远程主机列表，这是根据你的SSH配置文件决定的。
+
+如果你发现你要连接的主机不再列表中，这时候需要添加远程主机，
+
+将光标移到SSH那一栏，点击右边的+，这个是添加远程主机的选项，然后你的vscode界面上方应该会出现一个下拉框：
+
+<img src="./image/ssh-17.png" alt="vscode remote" width="80%" />
+
+这个输入框让你输入ssh的登陆命令，就像在命令行内进行登陆一样。
+
+输入相关的ssh命令，这时候vscode会提示选择需要更新的ssh配置文件，选择自己用户目录下的那个文件（`/home/username/.ssh/config`），按下enter，然后vscode会提示host added!
+
+<img src="./image/ssh-18.png" alt="vscode remote" width="80%" />
+
+这时候打开ssh配置界面，发现vscode已经自动添加了主机的配置文件：
+
+<img src="./image/ssh-22.png" alt="vscode remote" width="80%" />
+
+当然，你可以将Host那一栏的ip地址换成自己喜欢的名字，比如myhost。
+
+然后，在左侧的remote exploer里面会出现新的主机：
+
+<img src="./image/ssh-23.png" alt="vscode remote" width="80%" />
+
+将光标移到目标主机那一行上，右侧会出现 -> (在当前窗口内连接)和 + (新开一个窗口进行连接)，根据你的需求选择一个，
+
+然后vscode会打开窗口，并且弹出一个框提示你输入密码，输入密码之后，vscode则开始连接。
+
+```admonish
+如果你自己的远程主机上没有安装vscode-server，那么远程连接时会自动安装，并且vscode会弹出如下提示：  
+<img src="./image/ssh-19.png" alt="vscode remote" width="80%" />
+```
+
+连接成功后在新的窗口内会显示：
+
+<img src="./image/ssh-20.png" alt="vscode remote" width="80%" />
+
+观察左下角会显示**SSH: HOSTNAME**，说明当前已经处在远程环境中，在左上角工具栏中打开终端，会显示远程系统中的终端（即使你的本地环境是windows，远程主机是linux，那么就会使用你linux系统下的终端）。
+
+点击左侧的文件图标（Explorer）将打开你的远程主机的工作目录，由于现在没有打开任何一个目录，因此会提示我们open a folder，
+
+随便选择一个目录，比如用户的家目录，然后打开，远程窗口会变为：
+
+<img src="./image/ssh-21.png" alt="vscode remote" width="80%" />
+
+这样就和本地开发几乎一模一样了。
+
+当然，vscode会帮我们记住上次打开的目录，这样下次连接就可以直接打开对于的远程目录了。
+
+<img src="./image/ssh-24.png" alt="vscode remote" width="80%" />
+
+上述方式连接每次都要输入密码，如果想改成使用密钥登陆，也非常简单，只需要将ssh关于远程主机的配置修改为：
+
+```text
+Host myhost
+	HostName 192.168.110.242
+	User ttang
+	IdentityFile "~/.ssh/id_rsa"
+```
+
+注意将私钥路径改成自己的，这样就可以使用密钥进行登陆了。
+
+```admonish warning
+使用免密登陆之前一定确保将公钥正确的上传至远程主机，上传的方法见SSH密钥登陆那一节，如果没上传公钥，vscode还是会提示输入密码进行登陆。
+```
+
 ### Github使用SSH
 
-到了这个阶段，相信你已经接触过了github（什么？你没用过github，那么请移步这一篇 ），且已经学会了科学上网（不知道什么是科学上网？那我没法教你了，自行搜索或者问同学吧，或者带杯奶茶来**面基**助教也是可以）。
+到了这个阶段，相信你已经接触过了github（什么？你没用过github，那么请移步[这一篇](./github.md)），且已经学会了科学上网（不知道什么是科学上网？那我没法教你了，自行搜索或者问同学吧，或者带杯奶茶来**面基**助教也是可以的）。
 
 出于众所周知的原因，大量的境外网站我们是无法访问的，github作为一个例外（可以不挂梯子直接访问，但是由于DNS污染，以及最近网速肉眼可见的变慢，建议还是使用梯子访问），给我们提供了天然的中转地，因此这一部分教大家如何使用代理和ssh方式访问github。
 
@@ -368,7 +481,7 @@ Github作为全世界有名的～～同性交流网站～～代码托管平台�
 
 github对于上述操作提供了两种访问方式，分别是**https**和**ssh**。比如，当我们需要clone一个仓库到本地时，点击仓库右上角的code，会分别提供https和ssh的链接
 
-<img src="./image/ssh-10.png" alt="git clone" width="80%">
+<img src="./image/ssh-10.png" alt="git clone" width="80%" />
 
 将上述链接复制，然后输入：
 
@@ -384,7 +497,7 @@ git clone git@github.com:xjtu-ics/textbook.git
 
 假设你已经准备好了代理，不管用什么方式，首先记录下代理的端口，比如这是我笔记本上的：
 
-<img src="./image/ssh-11.png" alt="git clone" width="80%">
+<img src="./image/ssh-11.png" alt="git clone" width="80%" />
 
 使用http协议的端口为20171，socks5协议端口为20170。
 
@@ -441,11 +554,11 @@ ssh的使用和ssh远程登陆的流程差不太多，首先在本地生成ssh�
 
 进入github官网 -> 右上角自己头像 -> 下拉菜单选择**设置** -> 左边栏选择**SSH and GPG keys** 进入SSH key管理页面：
 
-<img src="./image/ssh-11.png" alt="git clone" width="80%">
+<img src="./image/ssh-12.png" alt="git clone" width="80%" />
 
 点击右上角**New SSH key**，随便输入一个title, 将自己本地的公钥内容复制到key里面（注意key的格式要求，不要复制少了！一般将`id_rsa.pub`文件的内容全部复制就行）：
 
-<img src="./image/ssh-12.png" alt="git clone" width="80%">
+<img src="./image/ssh-13.png" alt="git clone" width="80%" />
 
 最后点击**Add SSH key**，退回到ssh key管理界面，就可以看到自己最新添加的公钥了。
 
