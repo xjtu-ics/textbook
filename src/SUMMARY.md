@@ -37,7 +37,6 @@
     - [Lab 5 Optimization Lab](./labs/lab5.md)
     - [Lab 6 Linker Lab](./labs/lab6.md)
 - [Develop Ops](./dev/README.md)
-    - [What is VPN](./dev/vpn.md)
     - [How to Use VSCode](./dev/vscode.md)
     - [Windows? Linux!](./dev/linux.md)
     - [VSCode? Vim!](./dev/vim.md)
