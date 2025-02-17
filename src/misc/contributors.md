@@ -13,7 +13,7 @@ Special thanks to __XJTU-ICS Team Members__. Big shout-out to them 🚀:
 - [Tang Tang](https://github.com/Tangtang1031) (TA, Senior)
 - [Jinnuo Du](https://github.com/blowinding) (TA, Senior)
 - [Jiajun Luan]() (TA, Senior)
-- [Jingyu Fu]() (TA, Senior)
+- [Jinyu Fu]() (TA, Senior)
 - [Boxuan Hu](https://bxhu2004.com/) (TA, Junior)
 - [Yike Liu]() (TA, Junior)
 - [Yuxuan Li](https://github.com/rouge3877) (TA, Junior)
