@@ -11,8 +11,12 @@ Special thanks to __XJTU-ICS Team Members__. Big shout-out to them 🚀:
 - [Yunguang Li](https://github.com/Hijack8) (HEAD TA, Master)
 - [Orion](https://orion-zhen.github.io/) (TA, Senior)
 - [Tang Tang](https://github.com/Tangtang1031) (TA, Senior)
-- [Jinnuo Du]() (TA, Senior)
+- [Jinnuo Du](https://github.com/blowinding) (TA, Senior)
+- [Jiajun Luan]() (TA, Senior)
+- [Jingyu Fu]() (TA, Senior)
 - [Boxuan Hu](https://bxhu2004.com/) (TA, Junior)
+- [Yike Liu]() (TA, Junior)
+- [Yuxuan Li](https://github.com/rouge3877) (TA, Junior)
 
 You can view the full list of contributors and their contributions [here](https://github.com/xjtu-ics/textbook/graphs/contributors).
 
