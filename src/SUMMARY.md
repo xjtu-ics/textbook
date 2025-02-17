@@ -26,18 +26,9 @@
     - [Heterogeneous Data Structures](./notes/chapter3/sec9.md)
     - [Combining Control and Data in Machine-Level Programs](./notes/chapter3/sec10.md)
 
-# Labs Materials
+# Dev Ops
 
-- [ICS Labs](./labs/README.md)
-    - [Lab 0 Environmental Preparation](./labs/lab0.md)
-    - [Lab 1 Data Lab](./labs/lab1.md)
-    - [Lab 2 Bomb Lab](./labs/lab2.md)
-    - [Lab 3 Attack Lab](./labs/lab3.md)
-    - [Lab 4 Cache Lab](./labs/lab4.md)
-    - [Lab 5 Optimization Lab](./labs/lab5.md)
-    - [Lab 6 Linker Lab](./labs/lab6.md)
 - [Develop Ops](./dev/README.md)
-    - [What is VPN](./dev/vpn.md)
     - [How to Use VSCode](./dev/vscode.md)
     - [Windows? Linux!](./dev/linux.md)
     - [VSCode? Vim!](./dev/vim.md)
@@ -45,6 +36,14 @@
     - [SSH: She’s Settled for Him](./dev/ssh.md)
     - [Git: Girlfriend Is Tricky](./dev/git.md)
     - [Google Style Guide](./dev/style.md)
+<!-- - [ICS Labs](./labs/README.md)
+    - [Lab 0 Environmental Preparation](./labs/lab0.md)
+    - [Lab 1 Data Lab](./labs/lab1.md)
+    - [Lab 2 Bomb Lab](./labs/lab2.md)
+    - [Lab 3 Attack Lab](./labs/lab3.md)
+    - [Lab 4 Cache Lab](./labs/lab4.md)
+    - [Lab 5 Optimization Lab](./labs/lab5.md)
+    - [Lab 6 Linker Lab](./labs/lab6.md) -->
 
 ------
 
