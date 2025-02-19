@@ -194,7 +194,7 @@ station <card-name> connect <wifi-name>
 
 现在你已经成功连接到网络了.
 
-> 参考 [wiki](https://wiki.archlinuxcn.org/zh-sg/Iwd)
+> 参考 [wiki](https://wiki.archlinuxcn.org/zh-cn/Iwd)
 
 #### 换源
 
@@ -760,7 +760,7 @@ pip install -r requirements.txt
 
 #### 虚拟环境
 
-一般地, 你应该会发现你无法在全局环境下使用 `pip` 安装依赖包, 这时因为 PEP 668 规定了, 全局环境不能用 `pip` 来安装依赖包, 以免全局环境被各种不同的依赖项弄得乱七八糟. 想要往全局 Python 中安装依赖包, 需要从系统的包管理器中找到对应的包. 例如 `numpy` 对应的在包管理器中的名称是 `python-numpy`, 而 `pip` 则是 `python-pip`.
+一般地, 你应该会发现你无法在全局环境下使用 `pip` 安装依赖包, 这是因为 PEP 668 规定了, 全局环境不能用 `pip` 来安装依赖包, 以免全局环境被各种不同的依赖项弄得乱七八糟. 想要往全局 Python 中安装依赖包, 需要从系统的包管理器中找到对应的包. 例如 `numpy` 对应的在包管理器中的名称是 `python-numpy`, 而 `pip` 则是 `python-pip`.
 
 想要用 `pip` 安装依赖包, 并且保持你的 Python 环境干净整洁, 你可以使用虚拟环境来隔离不同的项目依赖. 要创建一个虚拟环境, 可以通过 Python 内置的模块:
 
