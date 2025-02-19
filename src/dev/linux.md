@@ -177,7 +177,7 @@ Linux 发行版(Distro)是基于 Linux 内核开发出的完整操作系统. 基
 
 ```shell
 station <card-name> scan
-station <card-name> get-network
+station <card-name> get-networks
 ```
 
 搜索完成后, 找到你想要连接的网络, 假设为 `<wifi-name>`.
