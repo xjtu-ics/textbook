@@ -176,8 +176,8 @@ Linux 发行版(Distro)是基于 Linux 内核开发出的完整操作系统. 基
 然后用以下命令搜索可用的无线网络:
 
 ```shell
-device <card-name> scan
-device <card-name> get-network
+station <card-name> scan
+station <card-name> get-network
 ```
 
 搜索完成后, 找到你想要连接的网络, 假设为 `<wifi-name>`.
@@ -185,7 +185,7 @@ device <card-name> get-network
 输入以下命令连接无线网络:
 
 ```shell
-device <card-name> connect <wifi-name>
+station <card-name> connect <wifi-name>
 ```
 
 之后会提示你输入 WiFi 密码, 输入密码后即可连接到网络.
@@ -193,6 +193,8 @@ device <card-name> connect <wifi-name>
 使用 `exit` 命令退出 `iwctl` 命令行界面.
 
 现在你已经成功连接到网络了.
+
+> 参考 [wiki](https://wiki.archlinuxcn.org/zh-sg/Iwd)
 
 #### 换源
 
