@@ -78,14 +78,31 @@
 4. 雷达图：显示你/你看的用户的个人工作重心，是commit多，还是pr多...
     <img src="./image/github-7.png" alt="github profile example" width="70%" />
 
-这里集中简单解释一下雷达图旁批这四个名词的含义，只是直观理解:
+每个提交对应于仓库的改动(`public / private`)，因此很多人会看见这张图：
+
+<img src="./image/github-1.png" alt="github profile example" width="70%" />
+
+还需要注意一个东西，叫 `follow` 👍
+
+```admonish 
+- Follower: 表示该用户的“粉丝”
+- Following: 表示该用户的“偶像”
+```
+
+这里展示一下关于follow的梗图，followers的数目可以大致反映一个用户的“大佬程度” 🦸
+
+<img src="./image/github-0.png" alt="github profile example" width="70%" />
+
+简单解释一下雷达图旁批这四个名词的含义，只是直观理解:
 
 - `Commit`: 你在自己仓库里做了更改并提交，比如你写了一篇博客并传到github仓库，这就算一次“commit”
 - `Pull Request`: 你对别人的仓库做了更改，要跟仓库主人说一声并经过他的同意，这个“待检查的更改”就叫做一次“Pull Request”，简称PR
 - `Issue`: 你看了别人的教程仓库，但是还是有困惑/发现错误，要跟人家提问题，这就叫“issue”
 - `Code Review`: 你是大佬，别人交的代码要你过目，你“过目”的过程就叫“code review”
 
-这几个词非常非常重要，这里我只是形象的打个比方，不完全正确，后面会做详细讲解✅
+上述的四个操作非常非常重要，这里我只是形象的打个比方，不完全正确，后面会做详细讲解✅
+
+<img src="./image/github-2.png" alt="github profile example" width="50%" />
 
 这时我们注意到主页面上方有菜单栏:
 
