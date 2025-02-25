@@ -4,7 +4,7 @@ import shutil
 def rename_and_move_images():
     original_format = "image-{}.png"
     # change for different chapter
-    new_format = "vpn-{}.png"
+    new_format = "github-{}.png"
     
     # 确保目标文件夹存在
     target_folder = "image"

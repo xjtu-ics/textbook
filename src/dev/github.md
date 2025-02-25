@@ -8,7 +8,7 @@
 
 经常上网冲浪的同学肯定会听说很多github的戏称，比如 Ga_hub :))
 
-那是因为GitHub上有95%的用户都是男性 😍
+那是因为GitHub上有95%的用户都是 🧔‍♂️
 
 因此GitHub也被称为全球最大同性交友网站
 
@@ -98,8 +98,93 @@
 - `Stars`: 这就是传说中的 Star🌟🌟🌟 我们看技术文章可能常会遇到如“GitHub 上 Star 数过万的项目”等，就是指这个Star！比如，我们觉得一个仓库很棒，那就在它的右上角点个 Star，就相当于是"一键三连"了，之后还可以在自己的主页中点击星星图标查看
 - `Sponsoring`: 你可能还会注意到上面的图片显示了这个专栏，不过大概率你现在是没有的，先不用管
 
+### Star
 
+接触计算机科学来已有近两年半(警觉🐔⚠️)，你肯定听说过“高star项目”之类的表达
 
+这里的star表示你的 “喜欢/赞赏”
+
+具体可以看你的菜单栏:
+
+<img src="./image/github-9.png" alt="github profile example" width="60%" />
+
+点击 `Stars`，相当于现在来到你的“打赏列表”:
+
+<img src="./image/github-10.png" alt="github profile example" width="60%" />
+
+当你在开源社区冲浪时，看见自己觉得还不错的项目，可以考虑给一个star
+
+给star后，就会在这里呈现 👍
+
+同时，你也可以对star列表进行合理的分类，点击右上方的 `create list` 即可
+
+比如，看上面的图片，这是笔者的“打赏列表”，分成 `System` / `Networks` 等类别 🌟
+
+## 如何创建你的第一个仓库
+
+我们经常会听到 “在github上创建一个仓库” 这类说法，这里我们会手把手教你如何来做
+
+<img src="./image/github-11.png" alt="github profile example" width="80%" />
+
+在菜单栏中，选择 `Repositories` 进入你的仓库列表:
+
+点击右上角，`New`
+
+<img src="./image/github-12.png" alt="github profile example" width="80%" />
+
+在创建的界面里:
+
+1. Repository name: 你想给这个仓库取什么名？
+2. Description (optional): 对这个仓库的一句话介绍
+3. `Public` / `Private`: 公有还是私有
+    - 公有: 所有用户都能看见这个仓库的全部内容和操作
+    - 私有: 只有你自己可以看 (比如ics的实验，就需要你们自行创建private仓库)
+4. Add a README file (optional): 给这个仓库默认加一个“说明界面”
+5. Add .gitignore (optional): 给这个仓库默认加一个“自忽略白名单”
+6. Choose a license (optional): 选择一个默认的开源协议
+7. 点击 `Create Repository` 即可
+
+## 如何创建/加入一个组织
+
+> 组织: organization
+
+这里以 [XJTU-ICS](https://github.com/xjtu-ics) 课程对应的开源社区为例 👏
+
+<img src="./image/github-13.png" alt="github profile example" width="80%" />
+
+<img src="./image/github-14.png" alt="github profile example" width="80%" />
+
+organization 也有 profile、也有repo，你可以简单的把它看成一个“更大”的用户
+
+具体如何创建、管理一个organization，此处省略，感兴趣的同学可以自行上网搜索
+
+## TL;DR
+
+至此，github的“最基础入门之旅”就结束 🎉🎉🎉
+
+很显然这只是github的冰山一角，更多的内容还得自行去探索，我们这里只是给大家一个最基础的宏观介绍，相当于是“埋下一颗种子”
+
+至于是否能成长为“参天大树”，还得看你自己的求知欲和实践情况 😄
+
+这里给出一些“探索路线”的推荐 👍
+
+Basic Operation (ignored for now):
+
+- [ ] How to create a repo and make a commit
+- [ ] Local machine and remote repo
+- [ ] Connect github with SSH (server / local machine)
+
+Advanced (ignored as well):
+
+- [ ] Github Action and Workflows
+- [ ] Github Pages
+- [ ] Make a PR
+- [ ] Report an Issue
+- [ ] Github Organization Management
+- [ ] GPG Keys
+- ...
+
+希望大家可以在开源这条路上越走越远 💪
 
 ------
 
