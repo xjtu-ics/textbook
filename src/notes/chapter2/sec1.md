@@ -2,7 +2,7 @@
 
 > Everything is bit.
 
-## Introduciotn
+## Introduction
 
 欢迎来到计算机系统底层的世界，如果你只是一个初学者，这里一定~~(maybe)~~ 会颠覆你对计算机的认知，理解系统精巧的设计 ~~(以及被各种繁琐的 historical stuff 气晕)~~  😎.
 
@@ -99,7 +99,7 @@ void swap(int *x,int *y)
 1. **左移(Left Shift)**：舍弃掉左溢出的位，在空出的右侧填0。
 2. **右移(Right Shift)**：舍弃掉右溢出的位，那么在空出的左侧填什么呢？和左移一样填0吗？NO！
     - **逻辑右移(Logical shift)**：在左侧填0，简单的规则。
-    - **算数右移(Arithmetic shift)**：在左侧填**原本的最高位**。
+    - **算术右移(Arithmetic shift)**：在左侧填**原本的最高位**。
 
 How strange! 为什么要有特殊的算数右移呢？
 
