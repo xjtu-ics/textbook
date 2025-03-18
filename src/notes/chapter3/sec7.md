@@ -39,7 +39,31 @@
 
 ## Passing Control
 
-我们通过运行栈来帮助我们完成过程的调用与返回
+我们通过运行栈来帮助我们完成过程的调用与返回。我们约定返回位置位于**调用指令的后一条**~~（返回在前面或者返回在调用处不就一直反复调用了吗）~~
+
+函数调用指令**Call**，```call label```，将**返回的位置存入栈中**，并跳转到```label```标记的代码块。
+
+返回指令**ret**，```ret```将返回指令从栈中```pop```出来，并跳转到那条指令去。
+
+控制的转移实际上就这么简单，调用的时候存一下返回地然后调用，返回的时候返回到预先存好的目的地就可以了。
+
+## Passing Data
+
+API约定函数调用**前六个参数保存在指定寄存器中**，多余六个的参数保存在栈中~~（真会用到吗？）~~。返回值始终保存在 **```%rax```** 中。下面一张图片指明了寄存器的保存顺序。
+
+<div align="center">
+<img src="./image/chapter3-sec7-0.png" alt="API Data Passing" width="80%" />
+</div>
+
+举一个简单的例子熟悉一下数据的转移:
+
+<div align="center">
+<img src="./image/chapter3-sec7-1.png" alt="Passing Date Example" width="80%" />
+</div>
+
+可以看到在这个例子中 ```multstore```调用了```mult2```，```mult2```直接将 ```%rdi and %rsi```中的值作为参数使用，并且计算返回的结果在```%rax```中。
+
+## Managing local data
 
 ------
 
