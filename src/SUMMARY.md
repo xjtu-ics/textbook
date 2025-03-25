@@ -24,7 +24,7 @@
     - [Procedures](./notes/chapter3/sec7.md)
     - [Array Allocation and Access](./notes/chapter3/sec8.md)
     - [Heterogeneous Data Structures](./notes/chapter3/sec9.md)
-    - [Combining Control and Data in Machine-Level Programs](./notes/chapter3/sec10.md)
+    - [Advanced Topic](./notes/chapter3/sec10.md)
 
 # Dev Ops
 
