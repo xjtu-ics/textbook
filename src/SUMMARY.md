@@ -25,6 +25,26 @@
     - [Array Allocation and Access](./notes/chapter3/sec8.md)
     - [Heterogeneous Data Structures](./notes/chapter3/sec9.md)
     - [Advanced Topic](./notes/chapter3/sec10.md)
+- [Processor Architecture](./notes/chapter4/README.md)
+    - [TheY86-64 Instruction Set Architecture](./notes/chapter4/sec1.md)
+    - [Logic Design and the Hardware Control Language HCL](./notes/chapter4/sec2.md)
+    - [Sequential Y86-64 Implementations](./notes/chapter4/sec3.md)
+    - [General Principles of Pipelining](./notes/chapter4/sec4.md)
+    - [Pipelined Y86-64 Implementations](./notes/chapter4/sec5.md)
+    - [Summary](./notes/chapter4/sec6.md)
+- [Optimizing Program Performance](./notes/chapter5/README.md)
+    - [Capabilities and Limitations of Optimizing Compilers](./notes/chapter5/sec1.md)
+    - [Expressing Program Performance](./notes/chapter5/sec2.md)
+    - [Program Example](./notes/chapter5/sec3.md)
+    - [Eliminating Loop Inefficiencies](./notes/chapter5/sec4.md)
+    - [Reducing Procedure Calls](./notes/chapter5/sec5.md)
+    - [EliminatingUnneededMemoryReferences](./notes/chapter5/sec6.md)
+- [The Memory Hierarchy](./notes/chapter6/README.md)
+    - [Storage Technologies](./notes/chapter6/sec1.md)
+    - [Locality](./notes/chapter6/sec2.md)
+    - [The Memory Hierarchy](./notes/chapter6/sec3.md)
+    
+    
 
 # Dev Ops
 
