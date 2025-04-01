@@ -43,6 +43,8 @@
     - [Storage Technologies](./notes/chapter6/sec1.md)
     - [Locality](./notes/chapter6/sec2.md)
     - [The Memory Hierarchy](./notes/chapter6/sec3.md)
+    - [Cache Memories](./notes/chapter6/sec4.md)
+    - [The Impact of Caches on Program Performance](./notes/chapter6/sec5.md)
     
     
 
