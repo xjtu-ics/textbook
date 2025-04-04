@@ -1,4 +1,4 @@
-# Chapter 5.5 Reducing Procedure Calls
+# Chapter 5.5 Enhancing Parallelism
 
 
 ------

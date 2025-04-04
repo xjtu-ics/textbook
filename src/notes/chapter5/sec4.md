@@ -1,4 +1,4 @@
-# Chapter  5.4 Eliminating Loop Inefficiencies
+# Chapter  5.4 Loop Unrolling
 
 
 ------
