@@ -2,7 +2,6 @@
 authors = ["Danfeng Shan", "Boxuan Hu"]
 description = "Textbook for Introduction to Computer System in Xi'an Jiaotong University"
 language = "en"
-multilingual = false
 src = "src"
 title = "Introduction to Computer System"
 
