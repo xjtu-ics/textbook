@@ -1,4 +1,4 @@
-# Chapter  5.6 Eliminating Unneeded Memory References
+# Chapter  5.6 Understanding Memory Performance
 
 
 
