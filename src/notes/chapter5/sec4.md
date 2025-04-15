@@ -2,7 +2,7 @@
 
 在上一节中我们介绍了现代 CPU 的一些优化手段。在这一节中我们将利用上一节学习的知识优化一个简单的代码。
 
-我们先来看未经过优化的初始版本。其中的 OP 代表程序测试的一种运算，data_t 代表一种类型，我们分别测试整型与浮点数在加法与乘法运算下的 CPE，衡量运行速度。
+我们先来看未经过优化的初始版本。其中的 ```OP``` 代表程序测试的一种运算，```data_t``` 代表一种类型，我们分别测试整型与浮点数在加法与乘法运算下的 CPE，衡量运行速度。
 
 <div align="center">
 <img src="./image/chapter5-sec4-0.png" alt="CPU Function Data" width="80%" />
@@ -39,10 +39,10 @@
 显然是可以的，其实在上一节中我们已经有所提及，利用**指令集并行，流水线技术**。那么为什么我们先前的代码受制于延迟界限了呢？核心在于运算有数据依赖，即下一步参与运算的数据是上一步的结果，我们消除这个依赖性。
 
 <div align="center">
-<img src="./image/chapter5-sec4-5.png" alt="Optim3 Code" width="80%" />
+<img src="./image/chapter5-sec4-5.png" alt="Optim3 Code" width="100%" />
 </div>
 
-<div align="center">
+<div align="left">
 <img src="./image/chapter5-sec4-6.png" alt="Optim3 Data" width="80%" />
 </div>
 
@@ -62,7 +62,7 @@
 <img src="./image/chapter5-sec4-9.png" alt="Best Data" width="80%" />
 </div>
 
-几乎等同于吞吐量界限的执行效率！我们还能进一步优化吗？受到吞吐量界限的限制，那么我能不能一次性读入更多数据呢？利用 CPU 中的**浮点数寄存器**，**"Programming with AVX2"**。在一些游戏引擎、高性能计算中会用到这种技术，本文不再过多的介绍。
+几乎等同于吞吐量界限的执行效率！我们还能进一步优化吗？受到吞吐量界限的限制，那么我能不能一次性读入更多数据呢？我们可以利用 CPU 中的**浮点数寄存器**，实现 **"Programming with AVX2"** 。在一些游戏引擎、高性能计算中会用到这种技术，本文不再过多的介绍。
 
 ------
 
