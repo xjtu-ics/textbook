@@ -44,8 +44,6 @@
     - [The Memory Hierarchy](./notes/chapter6/sec3.md)
     - [Cache Memories](./notes/chapter6/sec4.md)
     - [The Impact of Caches on Program Performance](./notes/chapter6/sec5.md)
-    
-    
 
 # Dev Ops
 
