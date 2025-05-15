@@ -5,7 +5,7 @@
 ## Symbol Resolution
 
 <div align="center">
-<img src="./image/chapter7-sec1-0.png" alt="Symbol example" width="100%" />
+<img src="./image/chapter7-sec2-0.png" alt="Symbol example" width="100%" />
 </div>
 
 上图是一个简单的程序的实例，可以看到即便在如此简单的程序当中也有大量的符号以及引用关系。为了解析程序中的所有符号，为符号分类是必须的。
