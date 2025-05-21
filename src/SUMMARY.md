@@ -48,6 +48,12 @@
     - [Base Concepts](./notes/chapter7/sec1.md)
     - [Procedures](./notes/chapter7/sec2.md)
     - [Libraries](./notes/chapter7/sec3.md)
+- [Exceptional Control Flow](./notes/chapter8/README.md)
+    - [Exceptions](./notes/chapter8/sec1.md)
+    - [Processes](./notes/chapter8/sec2.md)
+    - [Process Control](./notes/chapter8/sec3.md)
+    - [Signals](./notes/chapter8/sec4.md)
+
 
 # Dev Ops
 
