@@ -53,6 +53,10 @@
     - [Processes](./notes/chapter8/sec2.md)
     - [Process Control](./notes/chapter8/sec3.md)
     - [Signals](./notes/chapter8/sec4.md)
+- [Virtual Memory](./notes/chapter9/README.md)
+    - [Concepts](./notes/chapter9/sec1.md)
+    - [Address Translation](./notes/chapter9/sec2.md)
+    - [Memory Mapping](./notes/chapter9/sec3.md)
 
 
 # Dev Ops
