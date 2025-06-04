@@ -57,6 +57,9 @@
     - [Concepts](./notes/chapter9/sec1.md)
     - [Address Translation](./notes/chapter9/sec2.md)
     - [Memory Mapping](./notes/chapter9/sec3.md)
+    - [Dynamic Memory Allocation: Basic Concepts](./notes/chapter9/sec4.md)
+    - [Dynamic Memory Allocation: Advanced Concepts](./notes/chapter9/sec5.md)
+    - [Implementing a Simple Allocator](./notes/chapter9/sec6.md)
 
 
 # Dev Ops
