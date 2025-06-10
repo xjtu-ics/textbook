@@ -1,4 +1,4 @@
-# Chapter 8.3 Memory Mapping
+# Chapter 9.3 Memory Mapping
 
 最后一节我们来讨论关于内存映射部分的内容并且举一个简单的内存系统模型加深理解。
 

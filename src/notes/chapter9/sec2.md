@@ -1,4 +1,4 @@
-# Chapter 8.2 Address Translation
+# Chapter 9.2 Address Translation
 
 在上一节中我们讨论了关于虚拟内存的一些基本的内容，这一节我们将进一步深入研究内存翻译这个过程。
 
