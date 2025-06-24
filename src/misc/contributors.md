@@ -4,19 +4,16 @@
 
 We would like to express our heartfelt thanks to all the contributors who have helped improve XJTU-ICS! Your efforts and collaboration make this project better every day 🌟.
 
-Special thanks to __XJTU-ICS Team Members__. Big shout-out to them 🚀:
+Special thanks to __XJTU-ICS Contributors__. Big shout-out to them 🚀:
 
-- [Danfeng Shan](https://dfshan.github.io/) (Professor)
-- [Hao Li](https://aquatoney.github.io/) (Professor)
-- [Yunguang Li](https://github.com/Hijack8) (HEAD TA, Master)
-- [Orion](https://orion-zhen.github.io/) (TA, Senior)
-- [Tang Tang](https://github.com/Tangtang1031) (TA, Senior)
-- [Jinnuo Du](https://github.com/blowinding) (TA, Senior)
-- [Jiajun Luan]() (TA, Senior)
-- [Jinyu Fu]() (TA, Senior)
-- [Boxuan Hu](https://bxhu2004.com/) (TA, Junior)
-- [Yike Liu]() (TA, Junior)
-- [Yuxuan Li](https://github.com/rouge3877) (TA, Junior)
+- [Danfeng Shan](https://dfshan.github.io/): Lecturer
+- [Hao Li](https://aquatoney.github.io/): Lecturer
+
+- [Boxuan Hu](https://bxhu2004.com/): TA
+- [Chengzhen Liu](https://orion-zhen.github.io/): TA
+- [Tang Tang](https://github.com/Scorpicathe): TA
+- [Yanshan Huang](https://hspikes.github.io/blog_Hspikes/): Main Contributor of ICS (2025)
+- [Chenning Li](https://leelemon203.github.io/): Main Contributor of ICS (2025)
 
 You can view the full list of contributors and their contributions [here](https://github.com/xjtu-ics/textbook/graphs/contributors).
 
