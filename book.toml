@@ -1,10 +1,10 @@
 [book]
 authors = ["Danfeng Shan", "Boxuan Hu"]
-description = "Textbook for Introduction to Computer System in Xi'an Jiaotong University"
+description = "Textbook for Introduction to Computer Systems in Xi'an Jiaotong University"
 language = "en"
 multilingual = false
 src = "src"
-title = "Introduction to Computer System"
+title = "Introduction to Computer Systems"
 
 [preprocessor]
 
@@ -19,7 +19,7 @@ smart-punctuation = true
 mathjax-support = true
 git-repository-url = "https://github.com/xjtu-ics"
 git-repository-icon = "fa-github"
-edit-url-template = "https://ics.dfshan.net"
+edit-url-template = "https://xjtu-ics.github.io/"
 additional-css = ["./mdbook-admonish.css"]
 
 [output.html.playground]
