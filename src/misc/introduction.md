@@ -1,6 +1,6 @@
 # Introduction to Computer Systems
 
-> By [ICS Contributors](./contributors.md), based on lectures by [Danfeng Shan](https://dfshan.github.io/), [Hao Li](https://aquatoney.github.io/), and others.
+> By [ICS Contributors](https://xjtu-ics.github.io/textbook/misc/contributors.html), based on lectures by [Danfeng Shan](https://dfshan.github.io/), [Hao Li](https://aquatoney.github.io/), and others.
 
 These are the course notes for [COMPSCI 400727: Introduction to Computer Systems](https://xjtu-ics.github.io/) at Xi'an Jiaotong University.
 
