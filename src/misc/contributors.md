@@ -8,7 +8,6 @@ Special thanks to __XJTU-ICS Contributors__. Big shout-out to them 🚀:
 
 - [Danfeng Shan](https://dfshan.github.io/): Lecturer
 - [Hao Li](https://aquatoney.github.io/): Lecturer
-
 - [Boxuan Hu](https://bxhu2004.com/): TA
 - [Chengzhen Liu](https://orion-zhen.github.io/): TA
 - [Tang Tang](https://github.com/Scorpicathe): TA
