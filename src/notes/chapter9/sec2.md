@@ -87,4 +87,4 @@ CPU 现将需要访问的 VA 发送给 MMU，MMU 再根据页表的位置向内�
 那么对于虚拟内存部分的主体内容就大致结束了，下一节我们将会在讲一讲关于内存映射即共享内存相关的内容，再举一个简单的例子。
 
 ------
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

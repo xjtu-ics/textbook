@@ -100,4 +100,4 @@ void multvec(int *x,int *y,int *z,int n){...}
 
 ------
 
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

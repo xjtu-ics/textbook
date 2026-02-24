@@ -22,7 +22,7 @@ If you’re an ICS student at XJTU, in any case of dispute, the official course 
 
 ## Corrections
 
-As of the Spring 2025 semester, this textbook is still being actively maintained and updated.
+As of the Spring 2026 semester, this textbook is still being actively maintained and updated.
 
 If you see any parts that needs to be corrected, please open a Github issue [here](https://github.com/xjtu-ics/textbook/issues).
 
@@ -41,6 +41,7 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 The design of this textbook is inspired by many outstanding courses. We would like to express our gratitude to the following courses that have provided us with valuable inspiration:
 
 - [CSAPP @CMU](https://www.cs.cmu.edu/~213/)
+- [CS149 @Stanford](https://gfxcourses.stanford.edu/cs149/fall23)
 - [CS168 @UC Berkeley](https://textbook.cs168.io/)
 - [CS161 @UC Berkeley](https://fa24.cs161.org/)
 - [Operating System @PKU](https://pku-os.github.io/)
@@ -49,4 +50,4 @@ The design of this textbook is inspired by many outstanding courses. We would li
 
 ------
 
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

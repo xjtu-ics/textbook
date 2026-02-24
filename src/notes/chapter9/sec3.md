@@ -59,4 +59,4 @@
 我们关于虚拟内存基本知识的介绍就到此为止了，接下来几节我们将会在虚拟内存的基础上介绍动态内存分配的基本知识，希望对你有帮助🌹
 
 ------
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

@@ -190,4 +190,4 @@ void combine7(vec_ptrv,data_t*dest)
 
 ------
 
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.
