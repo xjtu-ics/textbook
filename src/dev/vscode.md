@@ -6,7 +6,7 @@
 
 ## 为什么要用 VSCode
 
-都2025年了，不会真有人还在用 [Dev C++](https://www.bloodshed.net/) 等小学生工具写C++代码吧😅
+都2026年了，不会真有人还在用 [Dev C++](https://www.bloodshed.net/) 等小学生工具写C++代码吧😅
 
 选择VSCode的理由包括但不限于：
 
@@ -19,7 +19,7 @@
 ```admonish
 一般意义上，我们认为：“编辑器之神”是Vim；“神之编辑器”是Emacs，详见 [《编辑器之战》](https://upclinux.github.io/intro/07/vim-and-emacs/)
 
-但是在2025年的视角来看，笔者更倾向于认为:
+但是在2026年的视角来看，笔者更倾向于认为:
 
 “编辑器之神”是VSCode；“神之编辑器”是Vim
 ```
@@ -502,4 +502,4 @@ SSH远程连接🎉
 
 ------
 
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

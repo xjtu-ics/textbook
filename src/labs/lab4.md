@@ -3,4 +3,4 @@
 
 ------
 
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

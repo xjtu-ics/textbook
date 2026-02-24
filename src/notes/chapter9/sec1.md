@@ -111,4 +111,4 @@ Page Fault 这个概念我们在异常控制流中提到过，其实就是当访
 本节的内容就到此为止了，在这一节中我们简要介绍了一些关于 VM 的概念与 VM 的基本运作逻辑，下一节我们将更为详细的介绍 VM 的机制，主要是内存翻译以及页表的数据组织方式。 
 
 ------
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

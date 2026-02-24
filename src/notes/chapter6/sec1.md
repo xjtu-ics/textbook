@@ -124,4 +124,4 @@ DRAM有许多种增强版，它们都是基于传统的DRAM单元，进行一些
 不过，办法总比困难多！现代计算机频繁地使用基于SRAM的高速缓存来弥补处理器-内存之间的差距，这种方法之所以可行是因为应用程序的一个称为**局部性**（locality）的基本属性，我们将在下一节讨论这个问题。
 
 ------
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

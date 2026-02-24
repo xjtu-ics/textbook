@@ -112,4 +112,4 @@ How strange! 为什么要有特殊的算数右移呢？
 关于 Information Storage 这个话题就谈论这么多吧，我想我们已经对位有了基本的了解与熟悉。后面两节我们将讨论一个个二进制位会怎么构成我们熟悉的整数，并在运算上表现出奇妙~~(?)~~ 的性质。
 
 ------
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.

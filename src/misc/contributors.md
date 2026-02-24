@@ -8,11 +8,20 @@ Special thanks to __XJTU-ICS Contributors__. Big shout-out to them 🚀:
 
 - [Danfeng Shan](https://dfshan.github.io/): Lecturer
 - [Hao Li](https://aquatoney.github.io/): Lecturer
+
+**Team-2026:**
+
+We want you!
+
+**Team-2025:**
+
 - [Boxuan Hu](https://bxhu2004.com/): TA
 - [Chengzhen Liu](https://orion-zhen.github.io/): TA
 - [Tang Tang](https://github.com/Scorpicathe): TA
-- [Yanshan Huang](https://hspikes.github.io/blog_Hspikes/): Main Contributor of ICS (2025)
-- [Chenning Li](https://leelemon203.github.io/): Main Contributor of ICS (2025)
+- [Yanshan Huang](https://hspikes.github.io/blog_Hspikes/): Main Contributor, Core Developer
+- [Chenning Li](https://leelemon203.github.io/): Main Contributor, Core Developer
+
+---
 
 You can view the full list of contributors and their contributions [here](https://github.com/xjtu-ics/textbook/graphs/contributors).
 
@@ -37,4 +46,4 @@ If you are curious about how to set up a textbook with mdBook, we have also prov
 
 ------
 
-© 2025. ICS Team. All rights reserved.
+© 2026. ICS Team. All rights reserved.
