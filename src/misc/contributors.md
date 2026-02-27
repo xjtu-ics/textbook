@@ -6,6 +6,8 @@ We would like to express our heartfelt thanks to all the contributors who have h
 
 Special thanks to __XJTU-ICS Contributors__. Big shout-out to them 🚀:
 
+**Teaching:**
+
 - [Danfeng Shan](https://dfshan.github.io/): Lecturer
 - [Hao Li](https://aquatoney.github.io/): Lecturer
 
