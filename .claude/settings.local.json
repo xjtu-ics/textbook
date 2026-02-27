@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:google.github.io)",
+      "mcp__github__get_issue",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(gh pr create:*)"
+    ]
+  }
+}

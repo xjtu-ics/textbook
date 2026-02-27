@@ -1,4 +1,4 @@
-# Google Style Guide
+# Google Style Guides
 
 你有没有过这样的经历: 打开自己三个月前写的代码, 拔剑四顾心茫然...
 
@@ -525,7 +525,7 @@ for x in range(10):
 4. **使用工具辅助**:
     * C++: `clang-format` 自动格式化, `clang-tidy` 静态检查
     * Python: `black` / `autopep8` 自动格式化, `pylint` / `ruff` 静态检查
-    * 感兴趣的同学可自行搜索 github 上一些关于 `linting` 的工具! (笔者自己用的是 [**czg**](https://github.com/Zhengqbbb/cz-git), 供参考)
+    * 感兴趣的同学可自行搜索 Github 上一些关于 `linting` 的工具! (笔者自己用的是 [**czg**](https://github.com/Zhengqbbb/cz-git), 供参考)
 
 记住: **代码是写给人看的, 顺便让机器执行.** 养成好习惯, 从现在开始!
 
