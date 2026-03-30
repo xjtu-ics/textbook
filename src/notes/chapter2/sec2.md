@@ -36,7 +36,7 @@
 
 ### 反码与原码
 
-1. **反码(One's Complement)**: \\(B_{2}O_{\omega}(\boldsymbol{x})=-(x_{\omega-1}·2^{\omega-1}-1)+\sum_{i=0}^{\omega-2}x_{i}·2^{i}  \\) 
+1. **反码(One's Complement)**: \\(B_{2}O_{\omega}(\boldsymbol{x})=-x_{\omega-1}·(2^{\omega-1}-1)+\sum_{i=0}^{\omega-2}x_{i}·2^{i}  \\)
 
 2. **原码(Sign-Magnitude)**: \\(B_{2}S_{\omega}(\boldsymbol{x})=(-1)^{x^{\omega-1}}\sum_{i=0}^{\omega-2}x_{i}·2^{i}  \\) 
 
